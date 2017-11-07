@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="control_time_B_A" id="01BD8151-F8BE-CFDD-66FE-C89B614B08FE" version="3.5">
+<createdBy>Astri</createdBy>
+<createdTime>2017-10-23 23:54:53 UTC</createdTime>
+<ownerDesignName>control_time_B_A</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>01BD8151-F8BE-CFDD-66FE-C89B614B08FE</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="14543EE3-0567-1993-4601-5B00D06BC78F">
+<designStoragePath>C:\Proyecto - Entidad Relacion</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>
