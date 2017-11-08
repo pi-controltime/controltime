@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Android</title>
+    <title><?php echo $title_page ?></title>
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
     <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">-->
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
     #view-source {
       position: fixed;
@@ -23,6 +24,10 @@
       margin-right: 40px;
       margin-bottom: 40px;
       z-index: 900;
+    }
+    .titlemenu{
+      background-color: red;
+      color: white;
     }
     </style>
   </head>
@@ -41,8 +46,11 @@
   	      <!-- Navigation -->
   	      <div class="android-navigation-container">
   	        <nav class="android-navigation mdl-navigation">
-  	          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Cerrar Sesion</a>
-  	        </nav>
+
+  	          <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="5">account_box</div>
+
+  	           <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<?php echo base_url() ?>index.php/login/cerrarSesion">Cerrar Sesion</a>
+            </nav>
   	      </div>
   	      <span class="android-mobile-title mdl-layout-title">
   	        <img class="android-logo-image" src="images/android-logo.png">
@@ -63,28 +71,18 @@
   	      <img class="android-logo-image" src="images/android-logo-white.png">
   	    </span>
   	    <nav class="mdl-navigation">
-  	      <a class="mdl-navigation__link" href="">Phones</a>
-  	      <a class="mdl-navigation__link" href="">Tablets</a>
-  	      <a class="mdl-navigation__link" href="">Wear</a>
-  	      <a class="mdl-navigation__link" href="">TV</a>
-  	      <a class="mdl-navigation__link" href="">Auto</a>
-  	      <a class="mdl-navigation__link" href="">One</a>
-  	      <a class="mdl-navigation__link" href="">Play</a>
+  	      <a class="mdl-navigation__link" href="">Principal</a>
+  	      <a class="mdl-navigation__link" href="">Listo para certificar</a>
+
+
   	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link" href="">Versions</span>
-  	      <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
-  	      <a class="mdl-navigation__link" href="">KitKat 4.4</a>
-  	      <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
-  	      <a class="mdl-navigation__link" href="">Android history</a>
+  	      <span class="mdl-navigation__link titlemenu" href="">Reportes</span>
+  	      <a class="mdl-navigation__link" href="">Horas acumuladas</a>
+  	      <a class="mdl-navigation__link" href="">Gastos ahorrados</a>
+
   	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link" href="">Resources</span>
-  	      <a class="mdl-navigation__link" href="">Official blog</a>
-  	      <a class="mdl-navigation__link" href="">Android on Google+</a>
-  	      <a class="mdl-navigation__link" href="">Android on Twitter</a>
-  	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link" href="">For developers</span>
-  	      <a class="mdl-navigation__link" href="">App developer resources</a>
-  	      <a class="mdl-navigation__link" href="">Android Open Source Project</a>
-  	      <a class="mdl-navigation__link" href="">Android SDK</a>
+  	      <span class="mdl-navigation__link titlemenu" href="">For developers</span>
+  	      <a class="mdl-navigation__link" href="">Cerrar sesion</a>
+
   	    </nav>
   	  </div>

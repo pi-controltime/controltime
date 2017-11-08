@@ -3,13 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	/*public function __construct(){
+	function __construct(){
+		    parent::__construct();
+		    /*$this->load->model('login_model');
+		    $this->load->library('recaptcha');*/
 
-	}*/
+	}
 	public function index()
 	{
-		
-		$this->load->view('templates/header');
+		$dato['title_page'] = "Autenticacion | ControlTime";		
+		$this->load->view('templates/header',$dato);
 		$this->load->view('login_view');
 		$this->load->view('templates/footer');
 	}
@@ -17,6 +20,22 @@ class Login extends CI_Controller {
 		$usuario = $_POST['usuario'];
 		$pass = $_POST['password'];
 
-		echo $usuario . " " . $pass;
+		//echo $usuario . " " . $pass;
+		if($usuario="admin" and $pass = "123")
+		{
+			redirect('/index.php/principal','refresh');
+		}
+		else
+		{
+			echo "Usuario y/o contraseña invalido";
+		}
+	}
+	public function cerrarSesion(){
+		/*$data = array(
+		    'user_logueado' => FALSE
+		);
+		$this->session->set_userdata($data);*/
+		$this->session->sess_destroy();
+		redirect('/index.php/inicio','refresh');
 	}
 }
