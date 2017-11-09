@@ -1,0 +1,93 @@
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+.image-principal{
+	height: 500px;
+	background: url('../img/manopizarra.jpg') center / cover;
+  opacity: 0.9;
+}
+.slogan{
+	font-family: 'Roboto', sans-serif;
+  text-transform:capitalize;
+	color: white;
+	font-size: 600%;
+  padding:250px 0px;
+  /* Aumentamos la anchura y altura durante 2 segundos */
+  transition: width 2s, height 2s, transform 1s;
+  -moz-transition: width 2s, height 2s, -moz-transform 1s;
+
+  -webkit-transition: width 2s, height 2s, -webkit-transform 1s;
+
+  -o-transition: width 2s, height 2s,-o-transform 1s;
+
+}
+.slogan:hover{
+  /* tranformamos el elemento al pasar el mouse por encima al doble de
+
+     su tamaño con scale(2). */
+
+  transform : scale(1.5);
+
+  -moz-transform : scale(1.5);      /* Firefox */
+
+  -webkit-transform : scale(1.5);   /* Chrome - Safari */
+
+  -o-transform : scale(1.5);        /* Opera */
+
+}
+
+/*ESTILOS PARA LA TARJETA DE LA VISTA PRINCIPAL_VIEW*/
+
+.principal-card-wide.principal {
+  width: 650px;
+  
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+}
+.principal-card-wide > .mdl-card__title {
+  color: #fff;
+  height:90px;
+  background-color: red; 
+  /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
+}
+
+/*FIN TARJETA PRINCIPAL_VIEW*/
+
+/* TARJETA LOGIN_VIEW*/
+.login-card-wide.login {
+  width: 512px;
+}
+.login-card-wide > .mdl-card__title {
+
+  height: 60px;
+  color: white;
+  background: red;
+  
+}
+.login-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+.ba-center{
+  width: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mdl-card__supporting-text{
+  text-align: center;
+}
+.ba-align-right{
+  margin-left: 70%;
+}
+/* FIN TARJETA LOGIN_VIEW*/

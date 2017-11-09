@@ -3,35 +3,10 @@
 	<form name="frm_login" method="POST" action="<?php echo base_url(); ?>index.php/login/validar">
 		<!-- Wide card with share menu button -->
 		<style>
-		.demo-card-wide.mdl-card {
-		  width: 512px;
-		}
-		.demo-card-wide > .mdl-card__title {
-
-		  height: 60px;
-		  color: white;
-		  background: red;
-		  
-		}
-		.demo-card-wide > .mdl-card__menu {
-		  color: #fff;
-		}
-		.ba-center{
-			width: 200px;
-			margin-top: 50px;
-			margin-bottom: 50px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		.mdl-card__supporting-text{
-			text-align: center;
-		}
-		.ba-align-right{
-			margin-left: 70%;
-		}
+		
 		</style>
 
-		<div class="demo-card-wide mdl-card mdl-shadow--2dp ba-center">
+		<div class="login-card-wide login mdl-card mdl-shadow--2dp ba-center">
 		  <div class="mdl-card__title">
 		    <h2 class="mdl-card__title-text">Formulario de ingreso</h2>
 		  </div>
@@ -58,3 +33,4 @@
 
 
 	</form>
+	<script type="text/javascript" src="<?php echo base_url(); ?>tools/js/login.js"></script>

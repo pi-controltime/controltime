@@ -2,34 +2,15 @@
 
 	<!-- Wide card with share menu button -->
 	<style>
-	.demo-card-wide.mdl-card {
-	  width: 650px;
-	  
-	  margin-top: 30px;
-	  margin-bottom: 30px;
-	  margin-left: auto;
-	  margin-right: auto;
-	  
-	  
-	}
-	.demo-card-wide > .mdl-card__title {
-	  color: #fff;
-	  height:90px;
-	  background-color: red; 
-	  /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
-	}
+	
 
 	.desicion{
 		
 
 	}
 	</style>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#sample3").focus();
-		});
-	</script>
-	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+	
+	<div class="principal-card-wide principal mdl-card mdl-shadow--2dp">
 	  <div class="mdl-card__title">
 	    <h2 class="mdl-card__title-text">Registro hora de ingreso y salida.</h2>
 	  </div>
@@ -77,3 +58,5 @@
 	  </div>
 	  
 	</div>
+
+	<script type="text/javascript" src="<?php echo base_url(); ?>tools/js/principal.js"></script>
