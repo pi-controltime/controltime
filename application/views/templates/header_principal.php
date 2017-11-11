@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
     <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="<?php echo base_url (); ?>tools/css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <style>
@@ -27,8 +27,8 @@
       z-index: 900;
     }
     .titlemenu{
-      background-color: red;
-      color: white;
+      /*background-color: grey;
+      color: white;*/
     }
     </style>
   </head>
@@ -53,6 +53,7 @@
   	           <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<?php echo base_url() ?>index.php/login/cerrarSesion">Cerrar Sesion</a>
             </nav>
   	      </div>
+          <!--
   	      <span class="android-mobile-title mdl-layout-title">
   	        <img class="android-logo-image" src="images/android-logo.png">
   	      </span>
@@ -63,7 +64,7 @@
   	        <li class="mdl-menu__item">4.4 KitKat</li>
   	        <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
   	        <li class="mdl-menu__item">Android History</li>
-  	      </ul>
+  	      </ul>-->
   	    </div>
   	  </div>
 
@@ -72,12 +73,14 @@
   	      <img class="android-logo-image" src="images/android-logo-white.png">
   	    </span>
   	    <nav class="mdl-navigation">
-  	      <a class="mdl-navigation__link" href="">Principal</a>
-  	      <a class="mdl-navigation__link" href="">Listo para certificar</a>
+  	      <a class="mdl-navigation__link" href="<?php echo base_url();?>/index.php/Principal">Principal</a>
+  	      <a class="mdl-navigation__link" href="<?php echo base_url();?>/index.php/Certlistos">Listo para certificar</a>
 
 
   	      <div class="android-drawer-separator"></div>
+          
   	      <span class="mdl-navigation__link titlemenu" href="">Reportes</span>
+
   	      <a class="mdl-navigation__link" href="">Horas acumuladas</a>
   	      <a class="mdl-navigation__link" href="">Gastos ahorrados</a>
 

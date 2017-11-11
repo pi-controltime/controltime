@@ -2,10 +2,6 @@
 
 	<form name="frm_login" method="POST" action="<?php echo base_url(); ?>index.php/login/validar">
 		<!-- Wide card with share menu button -->
-		<style>
-		
-		</style>
-
 		<div class="login-card-wide login mdl-card mdl-shadow--2dp ba-center">
 		  <div class="mdl-card__title">
 		    <h2 class="mdl-card__title-text">Formulario de ingreso</h2>
@@ -23,7 +19,7 @@
 		  	  </div>
 		  </div>
 		  <div class="mdl-card__actions mdl-card--border">
-		    <input type="submit" name="bnt_ingresar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ba-align-right" value="Iniciar Sesion">
+		    <input type="submit" name="bnt_ingresar" id="bnt_ingresar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ba-align-right" value="Iniciar Sesion">
 
 		  </div>
 		  <div class="mdl-card__menu">

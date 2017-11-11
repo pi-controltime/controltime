@@ -1,16 +1,8 @@
 <div class="android-content mdl-layout__content">
 
 	<!-- Wide card with share menu button -->
-	<style>
 	
-
-	.desicion{
-		
-
-	}
-	</style>
-	
-	<div class="principal-card-wide principal mdl-card mdl-shadow--2dp">
+	<div class="uno-card-wide principal mdl-card mdl-shadow--2dp">
 	  <div class="mdl-card__title">
 	    <h2 class="mdl-card__title-text">Registro hora de ingreso y salida.</h2>
 	  </div>
@@ -24,9 +16,7 @@
 	    			  <input class="mdl-textfield__input" type="text" id="sample3">
 	    			  <label class="mdl-textfield__label" for="sample3">Numero de documento</label>
 	    			</div>
-	    		</div>
-	    		
-	    		
+	    		</div>	    		
 	    	
 	    	</div>
 

@@ -21,14 +21,11 @@ class Login extends CI_Controller {
 		$pass = $_POST['password'];
 
 		//echo $usuario . " " . $pass;
-		if($usuario="admin" and $pass = "123")
+		if($usuario="admin" && $pass = "123")
 		{
 			redirect('/index.php/principal','refresh');
 		}
-		else
-		{
-			echo "Usuario y/o contraseña invalido";
-		}
+		
 	}
 	public function cerrarSesion(){
 		/*$data = array(

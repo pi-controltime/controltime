@@ -44,17 +44,16 @@
 
 /*ESTILOS PARA LA TARJETA DE LA VISTA PRINCIPAL_VIEW*/
 
-.principal-card-wide.principal {
+.uno-card-wide.principal {
   width: 650px;
-  
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
   
   
 }
-.principal-card-wide > .mdl-card__title {
+.uno-card-wide > .mdl-card__title {
   color: #fff;
   height:90px;
   background-color: red; 
@@ -91,3 +90,18 @@
   margin-left: 70%;
 }
 /* FIN TARJETA LOGIN_VIEW*/
+
+.tablacertificados{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#pendiente{
+  background-color: orange;
+  color: white;
+}
+#liberado{
+  background-color: green;
+  color: white;
+}
