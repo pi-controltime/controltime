@@ -1,5 +1,5 @@
 -- Generado por Oracle SQL Developer Data Modeler 17.3.0.261.1529
---   en:        2017-10-31 22:07:48 COT
+--   en:        2017-11-13 16:50:52 COT
 --   sitio:      Oracle Database 11g
 --   tipo:      Oracle Database 11g
 
@@ -146,7 +146,8 @@ CREATE TABLE personas (
     perso_registradopor   VARCHAR2(100) NOT NULL,
     eps_codigo            NUMBER(2) NOT NULL,
     insti_codigo          NUMBER(3) NOT NULL,
-    suba_codigo           NUMBER(3) NOT NULL
+    suba_codigo           NUMBER(3) NOT NULL,
+    perso_canthoras       NUMBER(4)
 );
 
 ALTER TABLE personas ADD CONSTRAINT personas_pk PRIMARY KEY ( perso_cedula );
