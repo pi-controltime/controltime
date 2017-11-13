@@ -1,3 +1,38 @@
+<div class="android-content mdl-layout__content">
+
+	<form name="frm_registro" method="POST" action="<?php echo base_url(); ?>index.php/registro/validar">
+		<!-- Wide card with share menu button -->
+
+		<style>
+		.demo-card-wide.mdl-card {
+		  width: 670px;
+		}
+		.demo-card-wide > .mdl-card__title {
+
+		  height: 60px;
+		  color: white;
+		  background: red;
+		  
+		}
+
+		.demo-card-wide > .mdl-card__menu {
+		  color: #fff;
+		}
+		.ba-center{
+			width: 200px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.mdl-card__supporting-text{
+			text-align: center;
+		}
+		.ba-align-right{
+			margin-left: 75%;
+		}
+
+		</style>
 
 		<div class="demo-card-wide mdl-card mdl-shadow--2dp ba-center">
 		  
