@@ -32,7 +32,44 @@
 		.demo-card-wide.mdl-card1 {
 		  width: 1200px;
 		}
-		</style>
+/*creacion de caracteres y especificaciones para datos de la tabla*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: tomato;
+    color: white;
+
+/*decripcion o especificacion de los colores de los botones*/
+button {
+    background-color: #tomato; /*  */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+</style>
 
 		<div class="demo-card-wide mdl-card mdl-shadow--2dp ba-center">
 		  
@@ -91,53 +128,60 @@
 		  <div class="mdl-card__actions mdl-card--border"></div>
 		  <div class="mdl-card__supporting-text">
 		  	<!-- CONTENIDO -->
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_CODIGO" name="INSTI_CODIGO">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_CODIGO">ID</label>
-		  	 </div>
-		  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_NOMBREINSTITUCION" name="INSTI_NOMBREINSTITUCION">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_NOMBREINSTITUCION">NOMBRE DE LA INSTITUCION</label>
-		  	 </div>
-		  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_JEFEVOLUNTARIADO" name="INSTI_JEFEVOLUNTARIADO">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_JEFEVOLUNTARIADO">NOMBRE DEL COORDINADOR DEL VOLUNTARIADO</label>
-		  	 </div>
-		  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_TELEFONO" name="INSTI_TELEFONO">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_TELEFONO">TELEFONO DEL COORDINADOR DE LA INSTITUCION</label>
-		  	 </div>
-		  	 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_CELULAR" name="INSTI_CELULAR">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_CELULAR">CELULAR DEL COORDINADOR DE LA INSTITUCION</label>
-		  	 </div>
-		  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_CORREOELECTRONICO" name="INSTI_CORREOELECTRONICO">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_CORREOELECTRONICO">CORREO ELECTRONICO DEL COORDINADOR DE LA INSTITUCIÓN</label>
-		  	 </div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_FECHAREGISTRO" name="INSTI_FECHAREGISTRO">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_FECHAREGISTRO">FECHA REGISTRO</label>
-		  	 </div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="INSTI_REGISTRADOPOR" name="INSTI_REGISTRADOPOR">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="INSTI_REGISTRADOPOR">REGISTRO POR</label>
-		  	 </div>
+
+	<table>
+			<tr>
+				<th>ID</th>
+				<th>NOMBRE INSTITUCION</th>
+				<th>NOMBRE DEL COORDINADOR DE LA INSTITUCION</th>
+				<th>CELULAR DEL COORDINADOR DE LA INSTITUCION</th>
+				<th>CORREO ELECTRONICO DEL COORDINADOR DE LA INSTITUCIÓN</th>
+				<th> PROCESO A REALIZAR </th>
+
+			</tr>
+		
+		<tr>
+				<td>ID</td>
+				<td>NOMBRE DE LA INSTITUCION</td>
+				<td>NOMBRE DEL COORDINADOR DEL VOLUNTARIADO</td>
+				<td>CELULAR DEL COORDINADOR DE LA INSTITUCION</td>
+				<td>CORREO ELECTRONICO DEL COORDINADOR DE LA INSTITUCIÓN</td>
+				<td>
+					<button class="button button2">Modificar </button><br><br>
+					<button class="button button2">Elimminar</button>
+				</td>
+				
+		</tr>
+		
+		<tr>
+				<td>ID</td>
+				<td>NOMBRE DE LA INSTITUCION</td>
+				<td>NOMBRE DEL COORDINADOR DEL VOLUNTARIADO</td>
+				<td>CELULAR DEL COORDINADOR DE LA INSTITUCION</td>
+				<td>CORREO ELECTRONICO DEL COORDINADOR DE LA INSTITUCIÓN</td>
+				<td>
+					<button class="button button2">Modificar </button><br><br>
+					<button class="button button2">Elimminar</button>
+				</td>
+				
+		</tr>
+		
+		<tr>
+				<td>ID</td>
+				<td>NOMBRE DE LA INSTITUCION</td>
+				<td>NOMBRE DEL COORDINADOR DEL VOLUNTARIADO</td>
+				<td>CELULAR DEL COORDINADOR DE LA INSTITUCION</td>
+				<td>CORREO ELECTRONICO DEL COORDINADOR DE LA INSTITUCIÓN</td>
+				<td>
+					<button class="button button2">Modificar </button><br><br>
+					<button class="button button2">Elimminar</button>
+				</td>
+				
+		</tr>
 
 
-
-
-
-		  	 </div>
-
-
+	</table>
 		 
-		 </div>
+		</div>
+
+		</div>
