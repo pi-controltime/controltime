@@ -39,7 +39,7 @@
   	  <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
   	    <div class="mdl-layout__header-row">
   	      <span class="android-title mdl-layout-title">
-  	        <img class="android-logo-image" src="images/android-logo.png">
+  	        <!--<img class="android-logo-image" src="images/android-logo.png">-->
   	      </span>
   	      <!-- Add spacer, to align navigation to the right in desktop -->
   	      <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -70,7 +70,7 @@
 
   	  <div class="android-drawer mdl-layout__drawer">
   	    <span class="mdl-layout-title">
-  	      <img class="android-logo-image" src="images/android-logo-white.png">
+  	      <img class="android-logo-image" src="<?php echo base_url();?>tools/img/logo.png" style="width: 180px; height: 70px;">
   	    </span>
   	    <nav class="mdl-navigation">
   	      <a class="mdl-navigation__link" href="<?php echo base_url();?>/index.php/Principal">Principal</a>

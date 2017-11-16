@@ -12,7 +12,7 @@ class Personas extends CI_Controller {
 	public function index()
 	{
 		$dato['title_page'] = "Personas | ControlTime"; 
-		$this->load->view('templates/header', $dato);
+		$this->load->view('templates/header_principal', $dato);
 		$this->load->view('personas_view');
 		$this->load->view('templates/footer');
 	}
