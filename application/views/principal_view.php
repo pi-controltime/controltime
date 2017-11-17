@@ -11,10 +11,10 @@
 	    <form action="#" method="GET">
 
 	    	<div class="mdl-grid">
-	    		<div class="mdl-cell mdl-cell--6-co mdl-cell--6-col-tablet">
+	    		<div class="mdl-cell mdl-cell--10-col mdl-cell--8-col-tablet">
 	    			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-	    			  <input class="mdl-textfield__input" type="text" id="sample3">
-	    			  <label class="mdl-textfield__label" for="sample3">Numero de documento</label>
+	    			  	<input class="mdl-textfield__input" type="text" id="sample3">
+	    			  	<label class="mdl-textfield__label" for="sample3">Numero de documento</label>
 	    			</div>
 	    		</div>	    		
 	    	

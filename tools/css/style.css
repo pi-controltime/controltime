@@ -45,7 +45,7 @@
 /*ESTILOS PARA LA TARJETA DE LA VISTA PRINCIPAL_VIEW*/
 
 .uno-card-wide.principal {
-  width: 650px;
+  width: 450px;
   margin-top: 50px;
   margin-bottom: 50px;
   margin-left: auto;
@@ -105,3 +105,19 @@
   background-color: green;
   color: white;
 }
+
+/*------------TARJETA UNO PERSONAS----------------*/
+.demo-card-square.mdl-card{
+  /*width: 720px;
+  height: 320px;*/
+  width: 80%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.demo-car-square > .mdl-card__supporting-text{
+
+}
+
+/*-----------------------------------------------*/
