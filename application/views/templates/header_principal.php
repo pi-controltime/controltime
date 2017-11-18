@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
     <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">-->
     <link rel="stylesheet" href="<?php echo base_url (); ?>tools/css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <style>
@@ -72,27 +75,28 @@
   	    <span class="mdl-layout-title">
   	      <img class="android-logo-image" src="<?php echo base_url();?>tools/img/logo.png" style="width: 180px; height: 70px;">
   	    </span>
+        <hr>
   	    <nav class="mdl-navigation">
   	      <a class="mdl-navigation__link" href="<?php echo base_url();?>/index.php/Principal">Principal</a>
   	      <a class="mdl-navigation__link" href="<?php echo base_url();?>/index.php/Certlistos">Listo para certificar</a>
 
-
+          <hr>
   	      <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link titlemenu" href="">Administrar</span>
-
+          <span class="mdl-navigation__link " href="">Administrar</span>
+          <hr>
           <a class="mdl-navigation__link" href="<?php echo base_url();?>/index.php/Personas">Personas</a>
           <a class="mdl-navigation__link" href="">Instituciones</a>
           <a class="mdl-navigation__link" href="">Areas y SubAreas</a>
-          
-  	      <span class="mdl-navigation__link titlemenu" href="">Reportes</span>
-
+          <hr>
+  	      <span class="mdl-navigation__link " href="">Reportes</span>
+          <hr>
   	      <a class="mdl-navigation__link" href="">Horas acumuladas</a>
   	      <a class="mdl-navigation__link" href="">Gastos ahorrados</a>
 
 
-
+          <hr>
   	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link titlemenu" href="">For developers</span>
+  	      <span class="mdl-navigation__link " href="">For developers</span>
   	      <a class="mdl-navigation__link" href="">Cerrar sesion</a>
 
   	    </nav>
