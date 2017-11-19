@@ -14,6 +14,6 @@ class Certlistos extends CI_Controller {
 		$dato['title_page'] = "Listos Certificar | ControlTime"; 
 		$this->load->view('templates/header_principal', $dato);
 		$this->load->view('certlistos_view');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/footer_principal');
 	}
 }

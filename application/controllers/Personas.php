@@ -14,6 +14,10 @@ class Personas extends CI_Controller {
 		$dato['title_page'] = "Personas | ControlTime"; 
 		$this->load->view('templates/header_principal', $dato);
 		$this->load->view('personas_view');
-		$this->load->view('templates/footer');
+		$this->load->view('templates/footer_principal');
+	}
+	public function registrar()
+	{
+		
 	}
 }

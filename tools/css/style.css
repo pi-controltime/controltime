@@ -84,7 +84,8 @@
   margin-right: auto;
 }
 .mdl-card__supporting-text{
-  text-align: center;
+  
+  width: 100%;
 }
 .ba-align-right{
   margin-left: 70%;
@@ -108,26 +109,49 @@
 
 /*------------TARJETA UNO PERSONAS----------------*/
 .demo-card-square.mdl-card{
+ margin-bottom: 28px;
   /*width: 720px;
   height: 320px;*/
-  width: 90%;
+/*  width: 90%;
   margin-top: 40px;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
+*/
 }
 .demo-car-square > .mdl-card__supporting-text{
 
 }
 
 .titlered{
-  background-color: rgb(244,67,54);
+  /*background-color: rgb(244,67,54);
+   background-color: rgb(255,110,64);*/
+  background-color: black;
   color: white;
   text-shadow: none;
+
 }
-.tarjeta-institucion.mdl-card{
-  /*width: 720px;
-  height: 320px;*/
+
+.max-width-persona {
+  width: 100%;
+
+
+}
+#academia{
+  padding-left: 8px;
+
+}
+#academia > .mdl-card {
+  margin-bottom: 10px;
+}
+#academia > .mdl-card >.mdl-card__title  {
+  height: 60px;
+  /*background-color: rgb(244,67,54);
+   background-color: rgb(255,110,64);*/
+  background-color: black;
+  color: white;
+}
+/*.tarjeta-institucion.mdl-card{
   width: 40%;
   margin-top: 10px;
   margin-bottom: 40px;
@@ -135,12 +159,30 @@
   margin-right: auto;
 }
 .tarjeta-eps.mdl-card{
-  /*width: 720px;
-  height: 320px;*/
   width: 40%;
   margin-top: 10px;
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
+}
+.tarjeta-sarea.mdl-card{
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: none;
 }*/
+.seccion-adicional{
+ margin-left: 10%;
+ margin-right: 10%;
+ 
+}
+
+.ba-btnpersona{
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 96%;
+  height: 50px; 
+}
 /*-----------------------------------------------*/
