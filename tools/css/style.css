@@ -1,4 +1,4 @@
-    #view-source {
+#view-source {
       position: fixed;
       display: block;
       right: 0;
@@ -186,3 +186,7 @@
   height: 50px; 
 }
 /*-----------------------------------------------*/
+
+#table_institu > .mdl-card__tittle {
+  height: 10px;
+}
