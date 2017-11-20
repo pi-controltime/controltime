@@ -4,40 +4,49 @@
 	<!--********* TABLA DE DATOS ********* -->
 	<div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet ">
 		
-		<div class="demo-card-square mdl-card mdl-shadow--2dp max-width-persona">
+		<div class="demo-card-square mdl-card mdl-shadow--2dp max-width-persona" id="table_institu">
 		  <div class="mdl-card__title mdl-card--expand mdl-card--border">
 		    <h2 class="mdl-card__title-text">Instituciones registradas</h2>
 		  </div>
 		  <div class="mdl-card__supporting-text">
-		    <table class="mdl-data-table mdl-js-data-table">
+		    <table class="table table-striped table-bordered table-responsive-lg" id="tabinstituciones">
 		    	<tr>
-		    		<th>Codigo</th>
-		    		<th>Nombre</th>
-		    		<th>Telefono</th>
-		    		<th>Jefe Voluntariado</th>
-		    		<th>Correo</th>
+		    		<th scope="col">Codigo</th>
+		    		<th scope="col">Nombre</th>
+		    		<th scope="col">Telefono</th>
+		    		<th scope="col">Jefe Voluntariado</th>
+		    		<th scope="col">Correo</th>
+		    		<th scope="col">Acciones</th>
 		    	</tr>
 		    	<tr>
 		    		<td>1001</td>
 		    		<td>San Mateo</td>
 		    		<td>755555</td>
 		    		<td>leonor</td>
-		    		<td>leonor@sanmateo.edu.co</td>		    		
+		    		<td>leonor@sanmateo.edu.co</td>
+		    		<td>
+		    			<button class="btn btn-warning btn-sm">
+		    				<i class="material-icons">update</i>
+		    			</button>
+		    			<button class="btn btn-danger btn-sm">
+		    				<i class="material-icons">delete_forever</i>
+		    			</button>
+		    		</td>		    		
 		    	</tr>
 		    </table>
 		  </div>
-		  <div class="mdl-card__actions mdl-card--border">
+		  <!--<div class="mdl-card__actions mdl-card--border">
 		    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 		      View Updates
 		    </a>
-		  </div>
+		  </div>-->
 		</div>
 	</div>
 	<!--********* FIN TABLA DE DATOS ********* -->
 	<!--********* FORMULARIO INSTITUCIONES ********* -->
 	<div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet max-whidth-persona">
 		
-		<div class="tarjeta-sarea mdl-card mdl-shadow--2dp max-width-persona" >
+		<div class="tarjeta-sarea mdl-card mdl-shadow--2dp max-width-persona" id="table_ninstitu">
 		  <div class="mdl-card__title  mdl-card--border ">
 		    <h2 class="mdl-card__title-text">Nueva institución </h2>
 
