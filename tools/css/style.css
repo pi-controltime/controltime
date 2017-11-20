@@ -187,6 +187,14 @@
 }
 /*-----------------------------------------------*/
 
-#table_institu > .mdl-card__tittle {
+#table_institu > .mdl-card__title {
   height: 10px;
+  background-color: black;
+  color: white;
 }
+#table_ninstitu > .mdl-card__title {
+
+  background-color: black;
+  color: white;
+}
+
