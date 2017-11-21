@@ -51,38 +51,40 @@
 		    <h2 class="mdl-card__title-text">Nueva institución </h2>
 
 		  </div>
-
+		  <!-- MDL Progress Bar with Indeterminate Progress -->
+		  <div class="mdl-progress mdl-js-progress mdl-progress__indeterminate" id="loading"></div>
 		  <div class="mdl-card__supporting-text">
+			<form method="POST"  action="<?php echo base_url(); ?>index.php/instituciones/registrar" id="frm_institu" name="frm_institu">
 			<div class="mdl-grid">
 				
 				<div class="mdl-textfield mdl-js-textfield">
-					<input class="mdl-textfield__input" type="text" id="txt_codigo">
+					<input class="mdl-textfield__input" type="text" id="txt_codigo" name="txt_codigo">
 					<label class="mdl-textfield__label" for="txt_codigo">Codigo</label>
 				</div>
 				
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield">
-					<input class="mdl-textfield__input" type="text" id="txt_nombre">
+					<input class="mdl-textfield__input" type="text" id="txt_nombre" name="txt_nombre">
 					<label class="mdl-textfield__label" for="txt_nombre">Nombre</label>
 					
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield">
-					<input class="mdl-textfield__input" type="text" id="txt_tel">
+					<input class="mdl-textfield__input" type="text" id="txt_tel" name="txt_tel">
 					<label class="mdl-textfield__label" for="txt_tel">Telefono</label>
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield">
-					<input class="mdl-textfield__input" type="text" id="txt_jefe">
+					<input class="mdl-textfield__input" type="text" id="txt_jefe" name="txt_jefe">
 					<label class="mdl-textfield__label" for="txt_jefe">Jefe voluntariado</label>
 				</div>
 			</div>
 			<div class="mdl-grid">
 				<div class="mdl-textfield mdl-js-textfield">
-					<input class="mdl-textfield__input" type="text" id="txt_correo">
+					<input class="mdl-textfield__input" type="text" id="txt_correo" name="txt_correo">
 					<label class="mdl-textfield__label" for="txt_correo">Correo</label>
 				</div>
 			</div>		 
@@ -92,11 +94,14 @@
 		  	  Registrar
 		  	</button>
 		  </div>
-
+		  </form>
 
 
 		</div>
 
+
 	</div>
 	<!--********* FIN FORMULARIO INSTITUCIONES ********* -->
 </div>
+
+<script type="text/javascript" src="<?php echo base_url(); ?>tools/js/instituciones.js"></script>
