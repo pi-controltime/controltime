@@ -26,4 +26,9 @@ class Eps_model extends CI_Model {
 		echo "<script>alert('Los datos han sido ingresados.');</script>";
  		redirect('eps', 'refresh');
 	}	
+
+	function eliminar($EPS_CODIGO){
+		$this->db->where('EPS_CODIGO', $EPS_CODIGO);
+		$this->db->delete('eps');
+	}
 }

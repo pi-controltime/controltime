@@ -22,9 +22,11 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+
 		.mdl-card__supporting-text{
 			text-align: center;
 		}
+
 		.ba-align-right{
 			margin-left: 75%;
 		}
@@ -106,8 +108,7 @@ button2:hover {
 		  </div>
 		  <div class="mdl-card__actions mdl-card--border"></div>
 		  <div class="mdl-card__supporting-text">
-		  	<!-- CONTENIDO -->
-
+	
 	<table>
 		<thead>
 			<tr>
@@ -115,6 +116,7 @@ button2:hover {
 				<th>NOMBRE EPS</th>
 				<th>FECHA DE REGISTRO</th>
 				<th>REGISTRADO POR</th>
+				<th>  </th>
 				<th> PROCESO A REALIZAR </th>
 
 			</tr>
@@ -128,8 +130,10 @@ button2:hover {
 							<td> <?php echo $eps->EPS_FECHAREGISTRO ; ?> </td>
 							<td> <?php echo $eps->EPS_REGISTRADOPOR ; ?> </td>
 							<td>	
-								<button class="button button2">Modificar </button><br><br>
-								<button class="button button2">Elimminar</button>
+								<?php echo "<td> EDITAR |";
+								 echo "<a href=".base_url(). " eps/eliminar/".$eps ->EPS_CODIGO."> ELIMINAR </a> </td>;" ?>
+		  						<!--<button class="button button2">Editar </button><br><br>
+								<button class="button button2">Eliminar</button>-->
 							</td>
 							
 						</tr>

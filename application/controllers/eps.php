@@ -5,6 +5,7 @@ class Eps extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("Eps_model");
+
 	}	
 
 	public function index()
@@ -37,5 +38,10 @@ class Eps extends CI_Controller {
 		$this->Eps_model->registrareps($datoseps);
 	}
 
+	public function eliminar(){
+		$EPS_CODIGO = $this->uri->segment(3);
+		$this->Eps_model->eliminar($EPS_CODIGO);
+		redirect('eps');
+	}
 
 }
