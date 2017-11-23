@@ -5,146 +5,117 @@
 
 		<style>
 		.demo-card-wide.mdl-card {
-		  width: 670px;
+		  width: 100%;
 		}
 		.demo-card-wide > .mdl-card__title {
 		  height: 60px;
 		  color: white;
-		  background: red;
+		  background: tomato;
 		}
 		.demo-card-wide > .mdl-card__menu {
 		  color: #fff;
 		}
-		.ba-center{
-			width: 200px;
-			margin-top: 50px;
-			margin-bottom: 50px;
-			margin-left: auto;
-			margin-right: auto;
-		}
 
-		.mdl-card__supporting-text{
-			text-align: center;
-		}
+
 
 		.ba-align-right{
-			margin-left: 75%;
+			
 		}
 /*SE CREA NUEVO FORMATO PARA LA TABLA QUE SE VA A CREAR ESTILO  FORMULARIO*/
 		.demo-card-wide.mdl-card1 {
-		  width: 1200px;
+		  width: 100%;
 		}
-/*creacion de caracteres y especificaciones para datos de la tabla*/
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
 
-th, td {
-    text-align: center;
-    padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-    background-color: tomato;
-    color: white;
-
-/*decripcion o especificacion de los colores de los botones*/
-button {
-    background-color: #tomato; /*  */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
 
 	</style>
 
-		<div class="demo-card-wide mdl-card mdl-shadow--2dp ba-center">
-		  
-		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text">EPS</h2>
-		  </div>
-		  <div class="mdl-card__actions mdl-card--border"></div>
-		  <div class="mdl-card__supporting-text">
-		  	<!-- CONTENIDO -->
-		  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		  	    <input class="mdl-textfield__input" type="text" id="EPS_DESCRIPCION" name="EPS_DESCRIPCION">
-		  	    <!--Ingreso -->
-		  	    <label class="mdl-textfield__label" for="EPS_DESCRIPCION">NOMBRE DE LA EPS</label>
-		  	 </div>
-
-		 </div>
-
-		  <div class="mdl-card__actions mdl-card--border">
-		  	<!--el boton-->
-		    <input type="submit" name="bnt_registrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ba-align-right" value="Registrar Datos">
-
-		  </div>
-
-		  <div class="mdl-card__menu">
-		    
-		  </div>
-		</div>
-
-</form>
-<div class="demo-card-wide mdl-card1 mdl-shadow--2dp ba-center">
-		  
-		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text">REGISTRO DATOS DE LA EPS</h2>
-		  </div>
-		  <div class="mdl-card__actions mdl-card--border"></div>
-		  <div class="mdl-card__supporting-text">
-	
-	<table>
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>NOMBRE EPS</th>
-				<th>FECHA DE REGISTRO</th>
-				<th>REGISTRADO POR</th>
-				<th>  </th>
-				<th> PROCESO A REALIZAR </th>
-
-			</tr>
-		</thead>
-
-		<tbody>
-				<?php foreach($todaseps-> result () as $eps):?>
-						<tr>
-							<td> <?php echo $eps->EPS_CODIGO ; ?> </td>
-							<td> <?php echo $eps->EPS_DESCRIPCION ; ?> </td>
-							<td> <?php echo $eps->EPS_FECHAREGISTRO ; ?> </td>
-							<td> <?php echo $eps->EPS_REGISTRADOPOR ; ?> </td>
-							<td hidden><?php $ruta=base_url()."eps/eliminar/".$eps->EPS_CODIGO ?></td>
-							<td hidden><?php $ruta=base_url()."eps/editar/".$eps->EPS_CODIGO ?></td>
-							<td>
-								<a href="<?php echo $ruta ?>">eliminar</a>
-								<a href="<?php echo $ruta ?>">actualizar</a>
-
-							</td>
-							
-						</tr>
-				<?php endforeach; ?>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-table">
 			
-		</tbody>
+			<div class="demo-card-wide mdl-card1 mdl-shadow--2dp ">
+		  
+				  <div class="mdl-card__title">
+				    <h2 class="mdl-card__title-text">REGISTRO DATOS DE LA EPS</h2>
+				  </div>
+				  <div class="mdl-card__actions mdl-card--border"></div>
+				<div class="mdl-card__supporting-text">
+			
+					<table class="table table-striped table-bordered table-responsive-lg">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nombre E.P.S.</th>
+								<th> Acciones </th>
 
-	</table>
-		 
-</div>
+							</tr>
+						</thead>
+
+						<tbody>
+								<?php foreach($todaseps-> result () as $eps):?>
+										<tr>
+											<td> <?php echo $eps->EPS_CODIGO ; ?> </td>
+											<td> <?php echo $eps->EPS_DESCRIPCION ; ?> </td>
+											<td hidden><?php $rutaeliminar=base_url()."index.php/eps/eliminar/".$eps->EPS_CODIGO ?></td>
+											<td hidden><?php $rutaeditar=base_url()."index.php/eps/editar/".$eps->EPS_CODIGO ?></td>
+											<td>
+												<a href="<?php echo $rutaeditar ?>" class="btn btn-warning">
+													<i class="material-icons">update</i>
+												</a>
+												<a href="<?php echo $rutaeliminar ?>" class="btn btn-danger">
+													<i class="material-icons">delete_forever</i>
+												</a> 
+
+											</td>
+											
+										</tr>
+								<?php endforeach; ?>
+							
+						</tbody>
+
+					</table>
+				</div>
+
+			</div>
+		</div>	
 
 
-		 </div>
+		<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-table">
+
+		 			<div class="demo-card-wide mdl-card mdl-shadow--2dp ba-center">
+				  
+
+				  <div class="mdl-card__title">
+				    <h2 class="mdl-card__title-text">EPS</h2>
+				  </div>
+				  <div class="mdl-card__actions mdl-card--border"></div>
+				  <div class="mdl-card__supporting-text">
+				  	<!-- CONTENIDO -->
+				  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				  	    <input class="mdl-textfield__input" type="text" id="EPS_DESCRIPCION" name="EPS_DESCRIPCION">
+				  	    <!--Ingreso -->
+				  	    <label class="mdl-textfield__label" for="EPS_DESCRIPCION">NOMBRE DE LA EPS</label>
+				  	 </div>
+
+				 </div>
+
+				  <div class="mdl-card__actions mdl-card--border">
+				  	<!--el boton-->
+				    <input type="submit" name="bnt_registrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ba-align-right" value="Registrar Datos">
+
+				  </div>
+
+				  <div class="mdl-card__menu">
+				    
+				  </div>
+				</div>
+
+		</div>
+	</div>
+ 		
+</form>
+
+
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

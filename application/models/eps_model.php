@@ -36,8 +36,8 @@ class Eps_model extends CI_Model {
 
 	function obtenerdatos ($EPS_CODIGO){
 		$this->db->where('EPS_CODIGO',$EPS_CODIGO);
-		$this->db->get('eps');
-		echo "<script>alert('Los datos han sido editados.');</script>";
-		redirect('eps', 'refresh');
+		$visual=$this->db->get('eps');
+		
+
 	}
 }
