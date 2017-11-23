@@ -43,10 +43,11 @@ class Eps extends CI_Controller {
 
 		$EPS_CODIGO = $this->uri->segment(3);
 		$this->Eps_model->eliminar($EPS_CODIGO);
-		redirect('eps');
+		
 	}
 
 	public function editar (){
-		
+		$EPS_CODIGO = $this ->uri->segment(3);
+		$obtenerdatos = $this ->Eps_model -> obtenerdatos($EPS_CODIGO);
 	}
 }

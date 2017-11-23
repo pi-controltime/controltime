@@ -129,11 +129,12 @@ button2:hover {
 							<td> <?php echo $eps->EPS_DESCRIPCION ; ?> </td>
 							<td> <?php echo $eps->EPS_FECHAREGISTRO ; ?> </td>
 							<td> <?php echo $eps->EPS_REGISTRADOPOR ; ?> </td>
-							<td>	
-								<?php echo "<td> <a href=".base_url()." eps/editar/".$eps->EPS_CODIGO."> EDITAR </a>  | ";
-								 echo "<a href=".base_url(). " eps/eliminar/".$eps->EPS_CODIGO."> ELIMINAR </a> </td>;" ?>
-		  						<!--<button class="button button2">Editar </button><br><br>
-								<button class="button button2">Eliminar</button>-->
+							<td hidden><?php $ruta=base_url()."eps/eliminar/".$eps->EPS_CODIGO ?></td>
+							<td hidden><?php $ruta=base_url()."eps/editar/".$eps->EPS_CODIGO ?></td>
+							<td>
+								<a href="<?php echo $ruta ?>">eliminar</a>
+								<a href="<?php echo $ruta ?>">actualizar</a>
+
 							</td>
 							
 						</tr>
