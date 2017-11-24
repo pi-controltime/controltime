@@ -20,8 +20,7 @@ class Eps extends CI_Controller {
 		$this->load->view('templates/header1');
 		/*la visualizacion de la siguiente pantalla,, se agrega la creacion de la visualizacion de l base de datoseps x*/
 		$this->load->view('eps_view', $resultadoseps); // );
-		/*la visualizacion del final de la pantalla*/
-		$this->load->view('templates/footer');
+		
 	}
 	/*la visualizacion y validacion del usuario y contraseña del usuario*/
 	
@@ -32,7 +31,8 @@ class Eps extends CI_Controller {
 
 		$datoseps =array(
 			'EPS_DESCRIPCION' => $_POST['EPS_DESCRIPCION'],
-			'EPS_FECHAREGISTRO' => $dateTime
+			'EPS_FECHAREGISTRO' => $dateTime,
+			'EPS_REGISTRADOPOR' => "admin"
 		);
 		
 		$this->Eps_model->registrareps($datoseps);
@@ -46,8 +46,20 @@ class Eps extends CI_Controller {
 		
 	}
 
-	public function editar (){
-		$EPS_CODIGO = $this ->uri->segment(3);
-		$obtenerdatos = $this ->Eps_model -> obtenerdatos($EPS_CODIGO);
+	public function editar(){
+		
+		$EPS_CODIGO=$this->input->post('txt_EPS_CODIGO');
+		$EPS_DESCRIPCION=$this->input->post('txt_EPS_DESCRIPCION');
+		
+		date_default_timezone_set('America/Bogota');
+		$dateTime=date('Y/m/d h:i:s', time());
+
+		$DATOSEDITADOSEPS = array(
+			"EPS_DESCRIPCION"=>$EPS_DESCRIPCION,
+			"EPS_FECHAREGISTRO"=>$dateTime,
+			"EPS_REGISTRADOPOR"=>"admin"
+
+		);
+		$this->Eps_model->actualizarRegistroEPS($EPS_CODIGO,$DATOSEDITADOSEPS);
 	}
 }

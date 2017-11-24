@@ -34,10 +34,15 @@ class Eps_model extends CI_Model {
 		redirect('eps', 'refresh');
 	}
 
-	function obtenerdatos ($EPS_CODIGO){
+// se realiza la actualizacion de los datos 
+
+		function actualizarRegistroEPS($EPS_CODIGO,$DATOSEDITADOSEPS){
 		$this->db->where('EPS_CODIGO',$EPS_CODIGO);
-		$visual=$this->db->get('eps');
-		
+		$this->db->update('eps',$DATOSEDITADOSEPS);
+		echo "<script>alert('la Eps ha sido actualizada con exito!!.');</script>";
+
+		redirect('eps', 'refresh');
 
 	}
+
 }
