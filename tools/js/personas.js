@@ -2,6 +2,7 @@ $(document).ready(function(){
 	$("#tarjetapass").hide();
 
 
+
 });
 
 function validapass(){
@@ -10,21 +11,21 @@ function validapass(){
 	if (pass!="") {
 		if (passcon!="") {
 			if (pass == passcon) {
-				alert("Contraseñas iguales");
+				$("#msg_pass").text("En hora buena! Las contraseñas coinciden.");
 			}
 			else
 			{
-
+				$("#msg_pass").text("Sigue intentando. Las contraseñas no coinciden.");
 			}
 		}
 		else
 		{
-
+			$("#msg_pass").text("");
 		}
 	}
 	else
 	{
-
+		$("#msg_pass").text("");
 	}
 	
 }
@@ -44,3 +45,17 @@ function validacceso(){
 		$("#tarjetapass").show();
 	}
 }
+
+
+  $( "#frm_persona" ).submit(function( event ) {
+	console.log($("#frm_persona").serialize());
+	$.ajax({
+		url:$("#frm_persona").attr("action"),
+		type:$("#frm_persona").attr("method"),
+		data:$("#frm_persona").serialize(),
+		success:function(respuesta){
+			alert(respuesta);
+		}
+	})
+
+  });

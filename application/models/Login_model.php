@@ -9,7 +9,7 @@ class Login_model extends CI_Model
 	/*All functions*/
 	function login($email,$password){
 		$this->db->where('perso_usermail',$email);
-		
+		$this->db->where('perso_contrasena',md5($password));
 		$consul=$this->db->get('personas');
 
 		if ($consul->num_rows()>0) {
