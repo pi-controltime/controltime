@@ -88,6 +88,7 @@
           <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Personas">Personas</a>
           <a class="mdl-navigation__link" href="<?php echo base_url(); ?>index.php/Instituciones">Instituciones</a>
           <a class="mdl-navigation__link" href="">Areas y SubAreas</a>
+          <a class="mdl-navigation__link" href="<?php echo base_url(); ?>index.php/eps">EPS</a>
           <hr>
   	      <span class="mdl-navigation__link " href="">Reportes</span>
           <hr>

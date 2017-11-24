@@ -18,21 +18,32 @@
 		    		<th scope="col">Correo</th>
 		    		<th scope="col">Acciones</th>
 		    	</tr>
-		    	<tr>
-		    		<td>1001</td>
-		    		<td>San Mateo</td>
-		    		<td>755555</td>
-		    		<td>leonor</td>
-		    		<td>leonor@sanmateo.edu.co</td>
-		    		<td>
-		    			<button class="btn btn-warning btn-sm">
-		    				<i class="material-icons">update</i>
-		    			</button>
-		    			<button class="btn btn-danger btn-sm">
-		    				<i class="material-icons">delete_forever</i>
-		    			</button>
-		    		</td>		    		
-		    	</tr>
+
+		    	<?php foreach ($resInst->result() as $row) { ?>
+		    		<tr>
+		    			<td><?php echo $row->insti_codigo ?></td>
+		    			<td><?php echo $row->insti_nombreinstitucion ?></td>
+		    			<td><?php echo $row->insti_telefono ?></td>
+		    			<td><?php echo $row->insti_jefevoluntariado ?></td>
+		    			<td><?php echo $row->insti_correoelectronico ?></td>
+		    			<td hidden><?php $data = "'".$row->insti_codigo."'".","."'".$row->insti_nombreinstitucion."'".","."'".$row->insti_telefono."'".","."'".$row->insti_jefevoluntariado."'".","."'".$row->insti_correoelectronico."'"?></td>
+
+		    			<td hidden><?php $rutaelim = base_url()."index.php/instituciones/eliminar/".$row->insti_codigo ?></td>
+		    			<td>
+		    				<button class="btn btn-warning btn-sm" onclick="actualizar(<?php echo $data ?>);"">
+		    					<i class="material-icons">update</i>
+		    				</button>
+
+		    				<a href="<?php echo $rutaelim; ?>" class="btn btn-danger btn-sm">
+		    					<i class="material-icons">delete_forever</i>
+		    				</a>
+
+		    			</td>		    		
+		    		</tr>	    		
+
+		    	<?php } ?>
+
+		    	
 		    </table>
 		  </div>
 		  <!--<div class="mdl-card__actions mdl-card--border">
@@ -94,7 +105,10 @@
 		  	  Registrar
 		  	</button>
 		  </div>
+
+		  
 		  </form>
+
 
 
 		</div>
@@ -103,5 +117,48 @@
 	</div>
 	<!--********* FIN FORMULARIO INSTITUCIONES ********* -->
 </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    	<form action="<?php echo base_url(); ?>index.php/instituciones/editar" method="POST">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modificar informacion de la institución</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+		
+
+		<input type="hidden" name="txt_uid" id="txt_uid">
+		<label>Nombre</label>
+        <input type="text" name="txt_unom" id="txt_unom" class="form-control">
+        <label>Telefono</label>	
+        <input type="text" name="txt_utel" id="txt_utel" class="form-control">
+        <label>Jefe voluntariado</label>	
+        <input type="text" name="txt_ujefe" id="txt_ujefe" class="form-control">
+	    <label>Correo</label>    
+        <input type="text" name="txt_ucorreo" id="txt_ucorreo" class="form-control">
+        
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button  class="btn btn-success">Actualizar</button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<!-- end modal -->
 
 <script type="text/javascript" src="<?php echo base_url(); ?>tools/js/instituciones.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>

@@ -126,7 +126,7 @@
 .titlered{
   /*background-color: rgb(244,67,54);
    background-color: rgb(255,110,64);*/
-  background-color: black;
+  background-color: tomato;
   color: white;
   text-shadow: none;
 
@@ -148,7 +148,7 @@
   height: 60px;
   /*background-color: rgb(244,67,54);
    background-color: rgb(255,110,64);*/
-  background-color: black;
+  background-color: tomato;
   color: white;
 }
 /*.tarjeta-institucion.mdl-card{
@@ -188,15 +188,20 @@
 /*-----------------------------------------------*/
 
 #table_institu > .mdl-card__title {
-  height: 10px;
-  background-color: black;
+  height: 60px;
+  background-color: tomato;
 
   color: white;
 }
 #table_ninstitu > .mdl-card__title {
 
-  background-color: black;
+  background-color: tomato;
   color: white;
 }
 
 >>>>>>> 18b4bcc7a76e98aef476ad49ccc565f6b1cf357f
+
+
+#trjprin{
+  width: 100%
+}
