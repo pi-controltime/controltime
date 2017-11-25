@@ -30,7 +30,7 @@ class Eps extends CI_Controller {
  	    $dateTime=date('Y/m/d h:i:s', time());
 
 		$datoseps =array(
-			'EPS_DESCRIPCION' => $_POST['EPS_DESCRIPCION'],
+			'EPS_NOMBRE' => $_POST['EPS_NOMBRE'],
 			'EPS_FECHAREGISTRO' => $dateTime,
 			'EPS_REGISTRADOPOR' => "admin"
 		);
@@ -49,13 +49,13 @@ class Eps extends CI_Controller {
 	public function editar(){
 		
 		$EPS_CODIGO=$this->input->post('txt_EPS_CODIGO');
-		$EPS_DESCRIPCION=$this->input->post('txt_EPS_DESCRIPCION');
+		$EPS_NOMBRE=$this->input->post('txt_EPS_NOMBRE');
 		
 		date_default_timezone_set('America/Bogota');
 		$dateTime=date('Y/m/d h:i:s', time());
 
 		$DATOSEDITADOSEPS = array(
-			"EPS_DESCRIPCION"=>$EPS_DESCRIPCION,
+			"EPS_NOMBRE"=>$EPS_NOMBRE,
 			"EPS_FECHAREGISTRO"=>$dateTime,
 			"EPS_REGISTRADOPOR"=>"admin"
 
