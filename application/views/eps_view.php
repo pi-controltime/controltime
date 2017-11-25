@@ -24,10 +24,10 @@
 						<tbody>
 								<?php foreach($todaseps-> result () as $eps):?>
 										<tr>
-											<td> <?php echo $eps->EPS_CODIGO ; ?> </td>
-											<td> <?php echo $eps->EPS_NOMBRE ; ?> </td>
-											<td hidden><?php $rutaeliminar=base_url()."index.php/eps/eliminar/".$eps->EPS_CODIGO ?></td>
-											<td hidden><?php $data = "'".$eps->EPS_CODIGO."'".","."'".$eps->EPS_NOMBRE."'"?></td>
+											<td> <?php echo $eps->eps_codigo ; ?> </td>
+											<td> <?php echo $eps->eps_nombre ; ?> </td>
+											<td hidden><?php $rutaeliminar=base_url()."index.php/eps/eliminar/".$eps->eps_codigo ?></td>
+											<td hidden><?php $data = "'".$eps->eps_codigo."'".","."'".$eps->eps_nombre."'"?></td>
 											<td>
 												<button class="btn btn-warning btn-sm" onclick="actualizar(<?php echo $data ?>);"">
 														<i class="material-icons">update</i>
@@ -64,9 +64,9 @@
 				  	<form name="frm_eps" method="POST" action="<?php echo base_url(); ?>index.php/eps/validar">
 				  	<!-- CONTENIDO -->
 				  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				  	    <input class="mdl-textfield__input" type="text" id="EPS_NOMBRE" name="EPS_NOMBRE">
+				  	    <input class="mdl-textfield__input" type="text" id="eps_nombre" name="eps_nombre">
 				  	    <!--Ingreso -->
-				  	    <label class="mdl-textfield__label" for="EPS_NOMBRE">NOMBRE DE LA EPS</label>
+				  	    <label class="mdl-textfield__label" for="eps_nombre">NOMBRE DE LA EPS</label>
 				  	 </div>
 				  	 </form>
 				 </div>
@@ -104,9 +104,9 @@
 		
 <!-- SE REALIZA LA LLAMADA DE LOS DATOS QUE  SE VAN A INGRESAR-->
 
-		<input type="hidden" name="txt_EPS_CODIGO" id="txt_EPS_CODIGO">
+		<input type="hidden" name="txt_eps_codigo" id="txt_eps_codigo">
 		<label>Nombre de la E.P.S </label>
-        <input type="text" name="txt_EPS_NOMBRE" id="txt_EPS_NOMBRE" class="form-control">
+        <input type="text" name="txt_eps_nombre" id="txt_eps_nombre" class="form-control">
         
 
       </div>

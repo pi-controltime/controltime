@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Areas_model extends CI_Model {
+class areas_model extends CI_Model {
 
 	function __construct(){
 		parent::__construct();
@@ -28,7 +28,7 @@ class Areas_model extends CI_Model {
 	}	
 
 	function eliminar($area_CODIGO){
-		$this->db->where('area_CODIGO', $area_CODIGO);
+		$this->db->where('area_CODIGO', $area_codigo);
 		$this->db->delete('areas');
 		echo "<script>alert('Los datos han sido eliminados.');</script>";
 		redirect('areas', 'refresh');

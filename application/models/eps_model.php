@@ -27,8 +27,8 @@ class Eps_model extends CI_Model {
  		redirect('eps', 'refresh');
 	}	
 
-	function eliminar($EPS_CODIGO){
-		$this->db->where('EPS_CODIGO', $EPS_CODIGO);
+	function eliminar($eps_codigo){
+		$this->db->where('eps_codigo', $eps_codigo);
 		$this->db->delete('eps');
 		echo "<script>alert('Los datos han sido eliminados.');</script>";
 		redirect('eps', 'refresh');
@@ -36,8 +36,8 @@ class Eps_model extends CI_Model {
 
 // se realiza la actualizacion de los datos 
 
-		function actualizarRegistroEPS($EPS_CODIGO,$DATOSEDITADOSEPS){
-		$this->db->where('EPS_CODIGO',$EPS_CODIGO);
+		function actualizarRegistroEPS($eps_codigo,$DATOSEDITADOSEPS){
+		$this->db->where('eps_codigo',$eps_codigo);
 		$this->db->update('eps',$DATOSEDITADOSEPS);
 		echo "<script>alert('la Eps ha sido actualizada con exito!!.');</script>";
 

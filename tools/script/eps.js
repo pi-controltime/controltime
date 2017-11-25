@@ -2,9 +2,9 @@ $(document).ready(function(){
 	$("#loading").hide();
 });
 
-function actualizar(EPS_CODIGO,EPS_DESCRIPCION){
-	$("#txt_EPS_CODIGO").val(EPS_CODIGO);
-	$("#txt_EPS_NOMBRE").val(EPS_NOMBRE) 
+function actualizar(eps_codigo,eps_descripcion){
+	$("#txt_eps_codigo").val(eps_codigo);
+	$("#txt_eps_nombre").val(eps_nombre) 
 
 	$("#modal_update").modal('show');
 }

@@ -30,9 +30,9 @@ class Eps extends CI_Controller {
  	    $dateTime=date('Y/m/d h:i:s', time());
 
 		$datoseps =array(
-			'EPS_NOMBRE' => $_POST['EPS_NOMBRE'],
-			'EPS_FECHAREGISTRO' => $dateTime,
-			'EPS_REGISTRADOPOR' => "admin"
+			'eps_nombre' => $_POST['eps_nombre'],
+			'eps_fecharegistro' => $dateTime,
+			'eps_registradopor' => "admin"
 		);
 		
 		$this->Eps_model->registrareps($datoseps);
@@ -41,25 +41,25 @@ class Eps extends CI_Controller {
 	public function eliminar(){
 // revisar porque no esta realizando la funcion de eliminar
 
-		$EPS_CODIGO = $this->uri->segment(3);
-		$this->Eps_model->eliminar($EPS_CODIGO);
+		$eps_codigo = $this->uri->segment(3);
+		$this->Eps_model->eliminar($eps_codigo);
 		
 	}
 
 	public function editar(){
 		
-		$EPS_CODIGO=$this->input->post('txt_EPS_CODIGO');
-		$EPS_NOMBRE=$this->input->post('txt_EPS_NOMBRE');
+		$eps_codigo=$this->input->post('txt_eps_codigo');
+		$eps_nombre=$this->input->post('txt_eps_nombre');
 		
 		date_default_timezone_set('America/Bogota');
 		$dateTime=date('Y/m/d h:i:s', time());
 
 		$DATOSEDITADOSEPS = array(
-			"EPS_NOMBRE"=>$EPS_NOMBRE,
-			"EPS_FECHAREGISTRO"=>$dateTime,
-			"EPS_REGISTRADOPOR"=>"admin"
+			"eps_nombre"=>$eps_nombre,
+			"eps_fecharegistro"=>$dateTime,
+			"eps_registradopor"=>"admin"
 
 		);
-		$this->Eps_model->actualizarRegistroEPS($EPS_CODIGO,$DATOSEDITADOSEPS);
+		$this->Eps_model->actualizarRegistroEPS($eps_codigo,$DATOSEDITADOSEPS);
 	}
 }
