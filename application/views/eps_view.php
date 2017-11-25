@@ -5,7 +5,7 @@
 		
 		<div class="demo-card-wide mdl-card mdl-shadow--2dp max-width-persona" id="trjprin">
 		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text">Welcome</h2>
+		    <h2 class="mdl-card__title-text">Bienvenido</h2>
 		  </div>
 		  <div class="mdl-card__supporting-text">
 		    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
