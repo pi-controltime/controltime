@@ -3,7 +3,7 @@ CREATE TABLE areas (
     area_codigo            INT(3) NOT NULL ,
     area_nombre            VARCHAR(100) NOT NULL,
     area_fecharegistro     DATETIME NOT NULL,
-    area_registradopor     VARCHAR(100) NOT NULL,
+    area_registradopor     VARCHAR(100) NOT NULL
 );
 
 ALTER TABLE areas ADD CONSTRAINT areas_pk PRIMARY KEY ( area_codigo );
