@@ -1,19 +1,13 @@
--- Generado por Oracle SQL Developer Data Modeler 17.3.0.261.1529
---   en:        2017-10-31 22:07:48 COT
---   sitio:      Oracle Database 11g
---   tipo:      Oracle Database 11g
-
-
 
 CREATE TABLE areas (
-    area_codigo            INT(3) NOT NULL,
+    area_codigo            INT(3) NOT NULL ,
     area_nombre            VARCHAR(100) NOT NULL,
     area_fecharegistro     DATETIME NOT NULL,
     area_registradopor     VARCHAR(100) NOT NULL,
-    emple_identificacion   INT(15) NOT NULL
 );
 
 ALTER TABLE areas ADD CONSTRAINT areas_pk PRIMARY KEY ( area_codigo );
+ALTER TABLE areas CHANGE area_codigo area_codigo INT(3) NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE aud_areas (
     area_codigo            INT(3) NOT NULL,
@@ -69,13 +63,15 @@ CREATE TABLE aud_personas (
     perso_tipo            VARCHAR(20),
     perso_nombres         VARCHAR(100) NOT NULL,
     perso_apellidos       VARCHAR(100) NOT NULL,
-    perso_telefonofijo    INT(7),
-    perso_celular         INT(10) NOT NULL,
+    perso_telefonofijo    INT(7) NULL,
+    perso_celular         INT(10) NULL,
     perso_usermail        VARCHAR(100) NOT NULL,
     perso_contrasena      VARCHAR(250),
-    perso_jefe            INT NOT NULL,
+    perso_jefe            INT(14) NULL,
     perso_modalidad       VARCHAR(50) NOT NULL,
     perso_estado          VARCHAR(10),
+    perso_canthoras       INT(4) NOT NULL,
+    perso_estudiosencurso VARCHAR(100) NOT NULL,
     perso_fecharegistro   DATETIME NOT NULL,
     perso_registradopor   VARCHAR(100) NOT NULL,
     eps_codigo            INT(2) NOT NULL,
@@ -116,6 +112,7 @@ CREATE TABLE eps (
 );
 
 ALTER TABLE eps ADD CONSTRAINT eps_pk PRIMARY KEY ( eps_codigo );
+ALTER TABLE eps CHANGE eps_codigo eps_codigo INT(2) NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE instituciones (
     insti_codigo              INT(3) NOT NULL,
@@ -129,19 +126,22 @@ CREATE TABLE instituciones (
 );
 
 ALTER TABLE instituciones ADD CONSTRAINT instituciones_pk PRIMARY KEY ( insti_codigo );
+ALTER TABLE instituciones CHANGE insti_codigo insti_codigo INT(3) NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE personas (
     perso_cedula          INT(14) NOT NULL,
     perso_tipo            VARCHAR(20),
     perso_nombres         VARCHAR(100) NOT NULL,
     perso_apellidos       VARCHAR(100) NOT NULL,
-    perso_telefonofijo    INT(7),
-    perso_celular         INT(10) NOT NULL,
+    perso_telefonofijo    INT(7) NULL,
+    perso_celular         INT(10) NULL,
     perso_usermail        VARCHAR(100) NOT NULL,
     perso_contrasena      VARCHAR(250),
-    perso_jefe            INT(14) NOT NULL,
+    perso_jefe            INT(14) NULL,
     perso_modalidad       VARCHAR(50) NOT NULL,
     perso_estado          VARCHAR(10),
+    perso_canthoras       INT(4) NOT NULL,
+    perso_estudiosencurso VARCHAR(100) NOT NULL,
     perso_fecharegistro   DATETIME NOT NULL,
     perso_registradopor   VARCHAR(100) NOT NULL,
     eps_codigo            INT(2) NOT NULL,
@@ -160,6 +160,7 @@ CREATE TABLE subareas (
 );
 
 ALTER TABLE subareas ADD CONSTRAINT subareas_pk PRIMARY KEY ( suba_codigo );
+ALTER TABLE subareas CHANGE suba_codigo suba_codigo INT(3) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE controlhoras
     ADD CONSTRAINT controlhoras_personas_fk FOREIGN KEY ( perso_cedula )
@@ -185,46 +186,3 @@ ALTER TABLE subareas
     ADD CONSTRAINT subareas_areas_fk FOREIGN KEY ( area_codigo )
         REFERENCES areas ( area_codigo );
 
-
-
--- Informe de Resumen de Oracle SQL Developer Data Modeler: 
--- 
--- CREATE TABLE                            12
--- CREATE INDEX                             0
--- ALTER TABLE                             18
--- CREATE VIEW                              0
--- ALTER VIEW                               0
--- CREATE PACKAGE                           0
--- CREATE PACKAGE BODY                      0
--- CREATE PROCEDURE                         0
--- CREATE FUNCTION                          0
--- CREATE TRIGGER                           0
--- ALTER TRIGGER                            0
--- CREATE COLLECTION TYPE                   0
--- CREATE STRUCTURED TYPE                   0
--- CREATE STRUCTURED TYPE BODY              0
--- CREATE CLUSTER                           0
--- CREATE CONTEXT                           0
--- CREATE DATABASE                          0
--- CREATE DIMENSION                         0
--- CREATE DIRECTORY                         0
--- CREATE DISK GROUP                        0
--- CREATE ROLE                              0
--- CREATE ROLLBACK SEGMENT                  0
--- CREATE SEQUENCE                          0
--- CREATE MATERIALIZED VIEW                 0
--- CREATE SYNONYM                           0
--- CREATE TABLESPACE                        0
--- CREATE USER                              0
--- 
--- DROP TABLESPACE                          0
--- DROP DATABASE                            0
--- 
--- REDACTION POLICY                         0
--- 
--- ORDS DROP SCHEMA                         0
--- ORDS ENABLE SCHEMA                       0
--- ORDS ENABLE OBJECT                       0
--- 
--- ERRORS                                   0
--- WARNINGS                                 0
