@@ -6,14 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Android</title>
+    <title><?php echo $title_page ?></title>
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
     <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="<?php echo base_url (); ?>tools/css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <style>
     #view-source {
       position: fixed;
@@ -24,6 +30,10 @@
       margin-bottom: 40px;
       z-index: 900;
     }
+    .titlemenu{
+      background-color: black;
+      /* color: white;*/
+    }
     </style>
   </head>
   <body>
@@ -33,7 +43,7 @@
   	  <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
   	    <div class="mdl-layout__header-row">
   	      <span class="android-title mdl-layout-title">
-  	        <img class="android-logo-image" src="images/android-logo.png">
+  	        <!--<img class="android-logo-image" src="images/android-logo.png">-->
   	      </span>
   	      <!-- Add spacer, to align navigation to the right in desktop -->
   	      <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -41,9 +51,13 @@
   	      <!-- Navigation -->
   	      <div class="android-navigation-container">
   	        <nav class="android-navigation mdl-navigation">
-  	          <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Cerrar Sesion</a>
-  	        </nav>
+
+  	          <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="5">account_box</div>
+
+  	           <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<?php echo base_url() ?>index.php/login/cerrarSesion">Cerrar Sesion</a>
+            </nav>
   	      </div>
+          <!--
   	      <span class="android-mobile-title mdl-layout-title">
   	        <img class="android-logo-image" src="images/android-logo.png">
   	      </span>
@@ -54,37 +68,38 @@
   	        <li class="mdl-menu__item">4.4 KitKat</li>
   	        <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
   	        <li class="mdl-menu__item">Android History</li>
-  	      </ul>
+  	      </ul>-->
   	    </div>
   	  </div>
 
   	  <div class="android-drawer mdl-layout__drawer">
   	    <span class="mdl-layout-title">
-  	      <img class="android-logo-image" src="images/android-logo-white.png">
+  	      <img class="android-logo-image" src="<?php echo base_url();?>tools/img/logo.png" style="width: 180px; height: 70px;">
   	    </span>
+        <hr>
   	    <nav class="mdl-navigation">
-  	      <a class="mdl-navigation__link" href="">Phones</a>
-  	      <a class="mdl-navigation__link" href="">Tablets</a>
-  	      <a class="mdl-navigation__link" href="">Wear</a>
-  	      <a class="mdl-navigation__link" href="">TV</a>
-  	      <a class="mdl-navigation__link" href="">Auto</a>
-  	      <a class="mdl-navigation__link" href="">One</a>
-  	      <a class="mdl-navigation__link" href="">Play</a>
+  	      <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Principal">Principal</a>
+  	      <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Certlistos">Listo para certificar</a>
+
+          <hr>
   	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link" href="">Versions</span>
-  	      <a class="mdl-navigation__link" href="">Lollipop 5.0</a>
-  	      <a class="mdl-navigation__link" href="">KitKat 4.4</a>
-  	      <a class="mdl-navigation__link" href="">Jelly Bean 4.3</a>
-  	      <a class="mdl-navigation__link" href="">Android history</a>
+          <span class="mdl-navigation__link " href="">Administrar</span>
+          <hr>
+          <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Personas">Personas</a>
+          <a class="mdl-navigation__link" href="<?php echo base_url(); ?>index.php/Instituciones">Instituciones</a>
+          <a class="mdl-navigation__link" href="">Areas y SubAreas</a>
+          <a class="mdl-navigation__link" href="<?php echo base_url(); ?>index.php/eps">EPS</a>
+          <hr>
+  	      <span class="mdl-navigation__link " href="">Reportes</span>
+          <hr>
+  	      <a class="mdl-navigation__link" href="">Horas acumuladas</a>
+  	      <a class="mdl-navigation__link" href="">Gastos ahorrados</a>
+
+
+          <hr>
   	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link" href="">Resources</span>
-  	      <a class="mdl-navigation__link" href="">Official blog</a>
-  	      <a class="mdl-navigation__link" href="">Android on Google+</a>
-  	      <a class="mdl-navigation__link" href="">Android on Twitter</a>
-  	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link" href="">For developers</span>
-  	      <a class="mdl-navigation__link" href="">App developer resources</a>
-  	      <a class="mdl-navigation__link" href="">Android Open Source Project</a>
-  	      <a class="mdl-navigation__link" href="">Android SDK</a>
+  	      <span class="mdl-navigation__link " href="">For developers</span>
+  	      <a class="mdl-navigation__link" href="">Cerrar sesion</a>
+
   	    </nav>
   	  </div>

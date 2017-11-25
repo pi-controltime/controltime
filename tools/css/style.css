@@ -1,0 +1,207 @@
+#view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+.image-principal{
+	height: 500px;
+	background: url('../img/manopizarra.jpg') center / cover;
+  opacity: 0.9;
+}
+.slogan{
+	font-family: 'Roboto', sans-serif;
+  text-transform:capitalize;
+	color: white;
+	font-size: 600%;
+  padding:250px 0px;
+  /* Aumentamos la anchura y altura durante 2 segundos */
+  transition: width 2s, height 2s, transform 1s;
+  -moz-transition: width 2s, height 2s, -moz-transform 1s;
+
+  -webkit-transition: width 2s, height 2s, -webkit-transform 1s;
+
+  -o-transition: width 2s, height 2s,-o-transform 1s;
+
+}
+.slogan:hover{
+  /* tranformamos el elemento al pasar el mouse por encima al doble de
+
+     su tamaño con scale(2). */
+
+  transform : scale(1.5);
+
+  -moz-transform : scale(1.5);      /* Firefox */
+
+  -webkit-transform : scale(1.5);   /* Chrome - Safari */
+
+  -o-transform : scale(1.5);        /* Opera */
+
+}
+
+/*ESTILOS PARA LA TARJETA DE LA VISTA PRINCIPAL_VIEW*/
+
+.uno-card-wide.principal {
+  width: 450px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+}
+.uno-card-wide > .mdl-card__title {
+  color: #fff;
+  height:90px;
+  background-color: red; 
+  /*background: url('../assets/demos/welcome_card.jpg') center / cover;*/
+}
+
+/*FIN TARJETA PRINCIPAL_VIEW*/
+
+/* TARJETA LOGIN_VIEW*/
+.login-card-wide.login {
+  width: 512px;
+}
+.login-card-wide > .mdl-card__title {
+
+  height: 60px;
+  color: white;
+  background: red;
+  
+}
+.login-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+.ba-center{
+  width: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mdl-card__supporting-text{
+  
+  width: 100%;
+}
+.ba-align-right{
+  margin-left: 70%;
+}
+/* FIN TARJETA LOGIN_VIEW*/
+
+.tablacertificados{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#pendiente{
+  background-color: orange;
+  color: white;
+}
+#liberado{
+  background-color: green;
+  color: white;
+}
+
+/*------------TARJETA UNO PERSONAS----------------*/
+.demo-card-square.mdl-card{
+ margin-bottom: 28px;
+  /*width: 720px;
+  height: 320px;*/
+/*  width: 90%;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+*/
+}
+.demo-car-square > .mdl-card__supporting-text{
+
+}
+
+.titlered{
+  /*background-color: rgb(244,67,54);
+   background-color: rgb(255,110,64);*/
+  background-color: tomato;
+  color: white;
+  text-shadow: none;
+
+}
+
+.max-width-persona {
+  width: 100%;
+
+
+}
+#academia{
+  padding-left: 8px;
+
+}
+#academia > .mdl-card {
+  margin-bottom: 10px;
+}
+#academia > .mdl-card >.mdl-card__title  {
+  height: 60px;
+  /*background-color: rgb(244,67,54);
+   background-color: rgb(255,110,64);*/
+  background-color: tomato;
+  color: white;
+}
+/*.tarjeta-institucion.mdl-card{
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tarjeta-eps.mdl-card{
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tarjeta-sarea.mdl-card{
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: none;
+}*/
+.seccion-adicional{
+ margin-left: 10%;
+ margin-right: 10%;
+ 
+}
+
+.ba-btnpersona{
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 96%;
+  height: 50px; 
+}
+/*-----------------------------------------------*/
+
+#table_institu > .mdl-card__title {
+  height: 60px;
+  background-color: tomato;
+
+  color: white;
+}
+#table_ninstitu > .mdl-card__title {
+
+  background-color: tomato;
+  color: white;
+}
+
+>>>>>>> 18b4bcc7a76e98aef476ad49ccc565f6b1cf357f
+
+
+#trjprin{
+  width: 100%
+}
