@@ -4,7 +4,7 @@
 	
 	<div class="uno-card-wide principal mdl-card mdl-shadow--2dp">
 	  <div class="mdl-card__title">
-	    <h2 class="mdl-card__title-text">Registro hora de ingreso y salida.</h2>
+	    <h2 class="mdl-card__title-text">Registro diario.</h2>
 	  </div>
 	  <div class="mdl-card__supporting-text">
 	    <!-- formulario -->
