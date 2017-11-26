@@ -1,8 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Eps extends CI_Controller {
+class Eps extends CI_Controller 
+{
 
-	public function __construct(){
+	public function __construct()
+	{
 		parent::__construct();
 		$this->load->model("Eps_model");
 
@@ -10,11 +12,8 @@ class Eps extends CI_Controller {
 
 	public function index()
 	{
-		
-		// creare un array data y ese mismo array es el que trae la informacion de la base de datos
-		$data = array('eps' => $this->Eps_model->getEps());
-		
-		$resulteps= $this ->Eps_model-> getEps();
+				
+		$resulteps= $this->Eps_model->getEps();
 		$dato = array(
 			"title_page"=>"Eps | controltime"
 		);
@@ -28,7 +27,8 @@ class Eps extends CI_Controller {
 	}
 	/*la visualizacion y validacion del usuario y contraseña del usuario*/
 	
-	public function VALIDAR(){
+	public function VALIDAR()
+	{
 		//fecha
 		date_default_timezone_set('America/Bogota');
  	    $dateTime=date('Y/m/d h:i:s', time());

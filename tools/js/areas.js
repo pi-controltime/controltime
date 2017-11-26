@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$("#loading").hide();
 });
 
-function actualizar(area_codigo,area_descripcion){
+function actualizar(area_codigo,area_nombre){
 	$("#txt_area_codigo").val(area_codigo);
 	$("#txt_area_nombre").val(area_nombre) 
 
