@@ -5,8 +5,8 @@ class Subareas_model extends CI_Model {
 		parent::__construct();
 		$this->load->database();
 	}
- 
- 	function getSubareas(){
+	function getSubareas(){
+
 		$resultados = $this->db->query(
 			'Select sa.suba_codigo,sa.suba_nombre,a.area_nombre 
 			from subareas sa, areas a 
@@ -22,7 +22,8 @@ class Subareas_model extends CI_Model {
 		
 	}
  
- 	function getAreas(){
+	function getAreas(){
+
 		$resultarea = $this->db->get('areas');
 		if ($resultarea -> num_rows() > 0) {
 		return $resultarea;

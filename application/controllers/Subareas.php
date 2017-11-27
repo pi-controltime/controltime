@@ -13,13 +13,18 @@ class Subareas extends CI_Controller {
 		
 		$resultsubareas= $this->Subareas_model->getSubareas(); 
 		$resultareas = $this->Subareas_model->getAreas();
+
+
 		$dato = array(
 			"title_page"=>"Subareas | controltime"
 		);
+
+
 		$datos = array(
 			'todasubareas' => $resultsubareas,
 			'todasareas'=>$resultareas
 		);
+
 		/*la visualizacion del encabezado de la pantalla*/
 		$this->load->view('templates/header_principal', $dato);
 		/*la visualizacion de la siguiente pantalla,, se agrega la creacion de la visualizacion de l base de datoseps x*/
@@ -61,6 +66,7 @@ class Subareas extends CI_Controller {
 			"suba_fecharegistro"=>$dateTime,
 			"suba_registradopor"=>"admin",
 			"area_codigo"=>$_POST['select_areas']
+
 		);
 		$this->Subareas_model->actualizarRegistroSUBAREAS($suba_codigo,$DATOSEDITADOSUBAREAS);
 	}
