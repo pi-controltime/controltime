@@ -5,10 +5,12 @@
 			
 			<div class="demo-card-wide mdl-card1 mdl-shadow--2dp max-width-persona" id="table_institu">
 		  
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">REGISTRO DATOS DE LA EPS</h2>
-				  </div>
-				  <div class="mdl-card__actions mdl-card--border"></div>
+				<div class="mdl-card__title">
+				   	 <h2 class="mdl-card__title-text">REGISTRO DATOS DE LA EPS</h2>
+				</div>
+
+				<div class="mdl-card__actions mdl-card--border"></div>
+
 				<div class="mdl-card__supporting-text">
 			
 					<table class="table table-striped table-bordered table-responsive-lg table-hover" id="tabinstituciones">
@@ -22,7 +24,7 @@
 						</thead>
 
 						<tbody>
-								<?php foreach($todaseps-> result () as $eps):?>
+								<?php foreach($todaseps->result() as $eps):?>
 										<tr>
 											<td> <?php echo $eps->eps_codigo ; ?> </td>
 											<td> <?php echo $eps->eps_nombre ; ?> </td>
@@ -56,37 +58,43 @@
 		 		<div class="demo-card-wide mdl-card mdl-shadow--2dp max-width-persona" id="table_ninstitu">
 				  
 
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">EPS</h2>
-				  </div>
-				  <div class="mdl-card__actions mdl-card--border"></div>
-				  <div class="mdl-card__supporting-text">
-				  	<form name="frm_eps" method="POST" action="<?php echo base_url(); ?>index.php/eps/validar">
-				  	<!-- CONTENIDO -->
-				  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				  	    <input class="mdl-textfield__input" type="text" id="eps_nombre" name="eps_nombre">
-				  	    <!--Ingreso -->
-				  	    <label class="mdl-textfield__label" for="eps_nombre">NOMBRE DE LA EPS</label>
-				  	 </div>
-				  	 </form>
-				 </div>
+					<div class="mdl-card__title">
+						    <h2 class="mdl-card__title-text">EPS</h2>
+					</div>
+					  
+					<div class="mdl-card__actions mdl-card--border"></div>
+					
+	   				<div class="mdl-card__supporting-text">
+					
+					  	<form name="frm_eps" method="POST" action="<?php echo base_url(); ?>index.php/eps/validar">
+					  	<!-- CONTENIDO -->
+					  		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					  	    	<input class="mdl-textfield__input" type="text" id="eps_nombre" name="eps_nombre">
+					  	    	<!--Ingreso -->
+					  	    		<label class="mdl-textfield__label" for="eps_nombre">NOMBRE DE LA EPS</label>
+					  	 	</div>
+					  	 
+						
 
-				  <div class="mdl-card__actions mdl-card--border">
-				  	<!--el boton-->
-				    <input type="submit" name="bnt_registrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored " value="Registrar Datos">
+							<div class="mdl-card__actions mdl-card--border">
+					  			<!--el boton-->
+					    		<input type="submit" name="bnt_registrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored " value="Registrar Datos">
+							</div>
 
-				  </div>
+						<div class="mdl-card__menu">
+					    
+						</div>
 
-				  <div class="mdl-card__menu">
-				    
-				  </div>
+					</form>
+					</div>
 				</div>
 
 		</div>
 	</div>
- </div>		
-
+ 	
 </div>
+
+
 <!-- inicia la visuaizacion de la pantalla donde me trae todos los datos de la EPS-->
 
 <div class="modal fade" id="modal_update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -102,7 +110,7 @@
       
       <div class="modal-body">
 		
-<!-- SE REALIZA LA LLAMADA DE LOS DATOS QUE  SE VAN A INGRESAR-->
+		<!-- SE REALIZA LA LLAMADA DE LOS DATOS QUE  SE VAN A INGRESAR-->
 
 		<input type="hidden" name="txt_eps_codigo" id="txt_eps_codigo">
 		<label>Nombre de la E.P.S </label>

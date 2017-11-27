@@ -1,14 +1,18 @@
 <div class="android-content mdl-layout__content">
 
+<!--presentacion por medio de una tarjeta en la primera visuaalizacion de la tabla-->
+
 	<div class="mdl-grid">
 		<div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-table">
 			
 			<div class="demo-card-wide mdl-card1 mdl-shadow--2dp max-width-persona" id="table_institu">
 		  
-				  <div class="mdl-card__title">
+				<div class="mdl-card__title">
 				    <h2 class="mdl-card__title-text">REGISTRO DATOS DEL SUBAREAS</h2>
-				  </div>
-				  <div class="mdl-card__actions mdl-card--border"></div>
+				</div>
+				
+				<div class="mdl-card__actions mdl-card--border"></div>
+				
 				<div class="mdl-card__supporting-text">
 			
 					<table class="table table-striped table-bordered table-responsive-lg table-hover" id="tabinstituciones">
@@ -16,18 +20,23 @@
 							<tr>
 								<th>Id</th>
 								<th>Nombre del Subarea</th>
+								<th>Nombre del Area</th>
 								<th> Acciones </th>
 
 							</tr>
 						</thead>
 
 						<tbody>
-								<?php foreach($todasubareas-> result () as $subareas):?>
+								<?php foreach($todasubareas-> result() as $subareas):?>
 										<tr>
 											<td> <?php echo $subareas->suba_codigo ; ?> </td>
 											<td> <?php echo $subareas->suba_nombre ; ?> </td>
+											<td> <?php echo $subareas->area_codigo ; ?></td>
+
 											<td hidden><?php $rutaeliminar=base_url()."index.php/subareas/eliminar/".$subareas->suba_codigo ?></td>
-											<td hidden><?php $data = "'".$subareas->suba_codigo."'".","."'".$subareas->suba_nombre."'"?></td>
+
+											<td hidden><?php $data = "'".$subareas->suba_codigo."'".","."'".$subareas->suba_nombre."'".","."'".$subareas->areas_codigo."'"?></td>
+											
 											<td>
 												<button class="btn btn-warning btn-sm" onclick="actualizar(<?php echo $data ?>);"">
 														<i class="material-icons">update</i>
@@ -56,38 +65,64 @@
 		 		<div class="demo-card-wide mdl-card mdl-shadow--2dp max-width-persona" id="table_ninstitu">
 				  
 
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">SUBAREAS</h2>
-				  </div>
-				  <div class="mdl-card__actions mdl-card--border"></div>
-				  <div class="mdl-card__supporting-text">
-				  	<form name="frm_subareas" method="POST" action="<?php echo base_url(); ?>index.php/subareas/validar">
-				  	<!-- CONTENIDO -->
-				  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				  	    <input class="mdl-textfield__input" type="text" id="suba_nombre" name="suba_nombre">
-				  	    <!--Ingreso -->
-				  	    <label class="mdl-textfield__label" for="suba_nombre">NOMBRE DEL SUBAREA</label>
-				  	 </div>
-				  	 </form>
-				 </div>
+					<div class="mdl-card__title">
+					    <h2 class="mdl-card__title-text">SUBAREAS</h2>
+					</div>
+					
+					<div class="mdl-card__actions mdl-card--border"></div>
+					
+					<div class="mdl-card__supporting-text">
+					 
+					  	<form name="frm_subareas" method="POST" action="<?php echo base_url(); ?>index.php/subareas/validar">
+					  	
+					  	<!-- CONTENIDO -->
+						  	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						  	    <input class="mdl-textfield__input" type="text" id="suba_nombre" name="suba_nombre">
+						  	    <!--Ingreso -->
+						  	    <label class="mdl-textfield__label" for="suba_nombre">NOMBRE DEL SUBAREA</label>
 
-				  <div class="mdl-card__actions mdl-card--border">
-				  	<!--el boton-->
-				    <input type="submit" name="bnt_registrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored " value="Registrar Datos">
+						  	</div>
 
-				  </div>
+						  	<!--se realiza la creacion de la seleccion de las areas paraa relacionar las tablas................................................................................................................-->
 
-				  <div class="mdl-card__menu">
-				    
-				  </div>
+						  	<div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+								<label for="area_nombre">NOMBRE DEL AREA </label>
+									<div>
+
+										<select class="form-control" id="select_areas" name="select_areas">
+                						<option disabled selected value="0">Seleccione una area</option>
+                						</select>					  		
+
+									</div>
+
+
+						  	</div>
+
+											  		
+				  	
+						<div class="mdl-card__actions mdl-card--border">
+						  	<!--el boton-->
+						    <input type="submit" name="bnt_registrar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored " value="Registrar Datos">
+
+						</div>
+
+						<div class="mdl-card__menu">
+						    
+						</div>
+
+						</form>
+					</div>
+
 				</div>
 
 		</div>
 	</div>
- </div>		
 
-</div>
-<!-- inicia la visuaizacion de la pantalla donde me trae todos los datos de la EPS-->
+</div>		
+
+
+<!-- inicia la visuaizacion de la pantalla donde me trae todos los datos de la SUBAREA-->
 
 <div class="modal fade" id="modal_update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">

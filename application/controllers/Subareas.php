@@ -5,7 +5,6 @@ class Subareas extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("Subareas_model");
-
 	}	
 
 	public function index()
@@ -14,7 +13,9 @@ class Subareas extends CI_Controller {
 		// creare un array data y ese mismo array es el que trae la informacion de la base de datos
 		$data = array('subareas' => $this->Subareas_model->getSubareas());
 		
-		$resultsubareas= $this ->Subareas_model-> getSubareas();
+		$resultsubareas= $this ->Subareas_model-> getSubareas(); 
+
+
 		$dato = array(
 			"title_page"=>"Subareas | controltime"
 		);
@@ -23,7 +24,7 @@ class Subareas extends CI_Controller {
 		/*la visualizacion del encabezado de la pantalla*/
 		$this->load->view('templates/header_principal', $dato);
 		/*la visualizacion de la siguiente pantalla,, se agrega la creacion de la visualizacion de l base de datoseps x*/
-		$this->load->view('subareas_view', $resultadosubareas); // );
+		$this->load->view('subareas_view', $resultadosubareas ); // );
 		
 	}
 	/*la visualizacion y validacion del usuario y contraseña del usuario*/

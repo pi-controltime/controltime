@@ -19,6 +19,7 @@ class Subareas_model extends CI_Model {
 		
 	}
 
+
 	function registrarsubareas ($datosubareas){
 
 		$this->db->insert('subareas', $datosubareas);
