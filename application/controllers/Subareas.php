@@ -40,9 +40,11 @@ class Subareas extends CI_Controller {
  	    $dateTime=date('Y/m/d h:i:s', time());
 
 		$datosubareas =array(
+			'suba_codigo'=> NULL,
 			'suba_nombre' => $_POST['suba_nombre'],
 			'suba_fecharegistro' => $dateTime,
-			'suba_registradopor' => "admin"
+			'suba_registradopor' => "admin",
+			'area_codigo'=>$_POST['select_areas']
 		);
 		
 		$this->Subareas_model->registrarsubareas($datosubareas);
@@ -67,7 +69,8 @@ class Subareas extends CI_Controller {
 		$DATOSEDITADOSUBAREAS = array(
 			"suba_nombre"=>$suba_nombre,
 			"suba_fecharegistro"=>$dateTime,
-			"suba_registradopor"=>"admin"
+			"suba_registradopor"=>"admin",
+			"area_codigo"=>$_POST['select_areas']
 
 		);
 		$this->Subareas_model->actualizarRegistroSUBAREAS($suba_codigo,$DATOSEDITADOSUBAREAS);

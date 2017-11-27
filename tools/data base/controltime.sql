@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-11-2017 a las 01:52:16
+-- Tiempo de generación: 27-11-2017 a las 02:32:24
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -40,7 +40,9 @@ CREATE TABLE `areas` (
 --
 
 INSERT INTO `areas` (`area_codigo`, `area_nombre`, `area_fecharegistro`, `area_registradopor`) VALUES
-(1, 'Fruver', '2017-11-25 00:00:00', 'root');
+(1, 'Fruver', '2017-11-25 00:00:00', 'root'),
+(2, 'Panaderia', '2017-11-26 08:12:20', 'admin'),
+(3, 'Oficina', '2017-11-26 08:12:47', 'admin');
 
 --
 -- Disparadores `areas`
@@ -117,7 +119,10 @@ INSERT INTO `aud_areas` (`area_codigo`, `area_nombre`, `area_fecharegistro`, `ar
 (2, 'PRUEBA', '2017-11-25 00:00:00', 'ROOT', 'U'),
 (2, 'PRUEBA 2', '2017-11-25 00:00:00', 'ROOT', 'U'),
 (2, 'colsupsidio', '2017-11-25 00:00:00', 'ROOT', 'U'),
-(1, 'Compensar', '2017-11-25 00:00:00', 'root', 'U');
+(1, 'Compensar', '2017-11-25 00:00:00', 'root', 'U'),
+(0, 'Panaderia', '2017-11-26 08:12:20', 'admin', 'I'),
+(0, 'Oficina12', '2017-11-26 08:12:41', 'admin', 'I'),
+(3, 'Oficina12', '2017-11-26 08:12:41', 'admin', 'U');
 
 -- --------------------------------------------------------
 
@@ -178,7 +183,8 @@ CREATE TABLE `aud_instituciones` (
 --
 
 INSERT INTO `aud_instituciones` (`insti_codigo`, `insti_nombreinstitucion`, `insti_jefevoluntariado`, `insti_telefono`, `insti_celular`, `insti_correoelectronico`, `insti_fecharegistro`, `insti_registradopor`, `tregistro_instituciones`) VALUES
-(1, 'San Mateo', 'leonor', 12344, 3112312, 'leonor@sanmateo.edu.co', '2017-11-26 00:00:00', 'root', 'I');
+(1, 'San Mateo', 'leonor', 12344, 3112312, 'leonor@sanmateo.edu.co', '2017-11-26 00:00:00', 'root', 'I'),
+(1, 'San Mateo', 'leonor', 12344, 3112312, 'leonor@sanmateo.edu.co', '2017-11-26 00:00:00', 'root', 'U');
 
 -- --------------------------------------------------------
 
@@ -226,6 +232,7 @@ CREATE TABLE `aud_subareas` (
   `suba_nombre` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `suba_fecharegistro` datetime NOT NULL,
   `suba_registradopor` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `area_codigo` int(3) NOT NULL,
   `tregistro_subareas` char(2) COLLATE utf8_spanish2_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -233,8 +240,11 @@ CREATE TABLE `aud_subareas` (
 -- Volcado de datos para la tabla `aud_subareas`
 --
 
-INSERT INTO `aud_subareas` (`suba_codigo`, `suba_nombre`, `suba_fecharegistro`, `suba_registradopor`, `tregistro_subareas`) VALUES
-(3, 'Tomate', '2017-11-26 00:00:00', 'root', 'I');
+INSERT INTO `aud_subareas` (`suba_codigo`, `suba_nombre`, `suba_fecharegistro`, `suba_registradopor`, `area_codigo`, `tregistro_subareas`) VALUES
+(3, 'Tomate', '2017-11-26 00:00:00', 'root', 0, 'I'),
+(11, 'Galletas', '2017-11-26 08:30:20', 'admin', 2, 'I'),
+(12, 'a', '2017-11-26 08:30:51', 'admin', 3, 'I'),
+(12, 'a', '2017-11-26 08:30:51', 'admin', 3, 'D');
 
 -- --------------------------------------------------------
 
@@ -347,7 +357,7 @@ CREATE TABLE `instituciones` (
 --
 
 INSERT INTO `instituciones` (`insti_codigo`, `insti_nombreinstitucion`, `insti_jefevoluntariado`, `insti_telefono`, `insti_celular`, `insti_correoelectronico`, `insti_fecharegistro`, `insti_registradopor`) VALUES
-(1, 'San Mateo', 'leonor', 12344, 3112312, 'leonor@sanmateo.edu.co', '2017-11-26 00:00:00', 'root');
+(1, 'San Mateo', 'leonor patricia', 12344, 3112312, 'leonor@sanmateo.edu.co', '2017-11-26 08:13:44', 'admin');
 
 --
 -- Disparadores `instituciones`
@@ -620,7 +630,8 @@ CREATE TABLE `subareas` (
 --
 
 INSERT INTO `subareas` (`suba_codigo`, `suba_nombre`, `suba_fecharegistro`, `suba_registradopor`, `area_codigo`) VALUES
-(3, 'Tomate', '2017-11-26 00:00:00', 'root', 1);
+(3, 'Tomate', '2017-11-26 00:00:00', 'root', 1),
+(11, 'Galletas', '2017-11-26 08:30:20', 'admin', 2);
 
 --
 -- Disparadores `subareas`
@@ -638,8 +649,8 @@ VALUES(
 	OLD.suba_codigo, 
 	OLD.suba_nombre, 
 	OLD.suba_fecharegistro, 
-	OLD.suba_registradopor, 
-	OLD.area_codigo,
+	OLD.suba_registradopor,
+	OLD.area_codigo, 
 	"D"); 
 END
 $$
@@ -651,12 +662,14 @@ INSERT INTO aud_subareas(
 	suba_nombre, 
 	suba_fecharegistro, 
 	suba_registradopor,
+	area_codigo,
 	tregistro_subareas ) 
 VALUES( 
 	NEW.suba_codigo, 
 	NEW.suba_nombre,
 	NEW.suba_fecharegistro, 
 	NEW.suba_registradopor, 
+	NEW.area_codigo,
 	"I"); 
 END
 $$
@@ -674,8 +687,8 @@ VALUES(
 	OLD.suba_codigo, 
 	OLD.suba_nombre, 
 	OLD.suba_fecharegistro, 
-	OLD.suba_registradopor, 
-	OLD.area_codigo,
+	OLD.suba_registradopor,
+	OLD.area_codigo, 
 	"U"); 
 END
 $$
@@ -690,36 +703,6 @@ DELIMITER ;
 --
 ALTER TABLE `areas`
   ADD PRIMARY KEY (`area_codigo`);
-
---
--- Indices de la tabla `aud_controlhoras`
---
-ALTER TABLE `aud_controlhoras`
-  ADD PRIMARY KEY (`contro_horaingreso`,`contro_horasalida`,`perso_cedula`);
-
---
--- Indices de la tabla `aud_eps`
---
-ALTER TABLE `aud_eps`
-  ADD PRIMARY KEY (`eps_codigo`);
-
---
--- Indices de la tabla `aud_instituciones`
---
-ALTER TABLE `aud_instituciones`
-  ADD PRIMARY KEY (`insti_codigo`);
-
---
--- Indices de la tabla `aud_personas`
---
-ALTER TABLE `aud_personas`
-  ADD PRIMARY KEY (`perso_cedula`);
-
---
--- Indices de la tabla `aud_subareas`
---
-ALTER TABLE `aud_subareas`
-  ADD PRIMARY KEY (`suba_codigo`);
 
 --
 -- Indices de la tabla `controlhoras`
@@ -765,7 +748,7 @@ ALTER TABLE `subareas`
 -- AUTO_INCREMENT de la tabla `areas`
 --
 ALTER TABLE `areas`
-  MODIFY `area_codigo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `area_codigo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `eps`
@@ -783,7 +766,7 @@ ALTER TABLE `instituciones`
 -- AUTO_INCREMENT de la tabla `subareas`
 --
 ALTER TABLE `subareas`
-  MODIFY `suba_codigo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `suba_codigo` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
