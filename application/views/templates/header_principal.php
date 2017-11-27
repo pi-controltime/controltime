@@ -52,7 +52,7 @@
   	      <div class="android-navigation-container">
   	        <nav class="android-navigation mdl-navigation">
 
-  	          <div class="material-icons mdl-badge mdl-badge--overlap" data-badge="5">account_box</div>
+  	          <!--<div class="material-icons mdl-badge mdl-badge--overlap" data-badge="5">account_box</div>-->
 
   	           <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<?php echo base_url() ?>index.php/login/cerrarSesion">Cerrar Sesion</a>
             </nav>
@@ -79,11 +79,14 @@
         <hr>
   	    <nav class="mdl-navigation">
   	      <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Principal">Principal</a>
-  	      <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Certlistos">Listo para certificar</a>
-
+          <a class="mdl-navigation__link" href="<?php echo base_url() ?>index.php/login/cerrarSesion">Cerrar sesion</a>
+  	      
           <hr>
   	      <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link " href="">Administrar</span>
+
+          <span class="mdl-navigation__link " href="">
+          <i class="material-icons">settings</i> Administrar
+          </span>
           <hr>
           <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Personas">Personas</a>
           <a class="mdl-navigation__link" href="<?php echo base_url(); ?>index.php/Instituciones">Instituciones</a>
@@ -93,16 +96,12 @@
 
           <a class="mdl-navigation__link" href="<?php echo base_url(); ?>index.php/eps">EPS</a>
           <hr>
-  	      <span class="mdl-navigation__link " href="">Reportes</span>
+  	      <span class="mdl-navigation__link " href="">
+            <i class="material-icons">show_chart</i> Reportes
+          </span>
           <hr>
-  	      <a class="mdl-navigation__link" href="">Horas acumuladas</a>
+  	      <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Certlistos">Horas acumuladas</a>
   	      <a class="mdl-navigation__link" href="">Gastos ahorrados</a>
-
-
-          <hr>
-  	      <div class="android-drawer-separator"></div>
-  	      <span class="mdl-navigation__link " href="">For developers</span>
-  	      <a class="mdl-navigation__link" href="">Cerrar sesion</a>
 
   	    </nav>
   	  </div>
