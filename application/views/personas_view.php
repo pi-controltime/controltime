@@ -50,7 +50,7 @@
   	  		</div>
   	  		<div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
   	  			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  	  			    <input class="mdl-textfield__input" type="text" id="txt_modalidad" name="txt_modalidad">
+  	  			    <input class="mdl-textfield__input" type="text" id="txt_modalidad" name="txt_modalidad" value="Voluntario">
   	  			    <label class="mdl-textfield__label" for="txt_modalidad">Modalidad</label>
   	  			</div>
   	  		</div>

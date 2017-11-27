@@ -20,9 +20,7 @@ class Login extends CI_Controller {
 		if ($this->session->userdata('user_logueado')) {
 					redirect('/index.php/principal','refresh');
 		}
-		else{
-			$this->cerrarSesion();
-		}
+		
 	}
 
 	public function validar(){
@@ -34,14 +32,21 @@ class Login extends CI_Controller {
 		if ($usuEncontrado) {
 			/*strtoupper = CONVIERTE TODO EL TEXTO A MAYUSCULAS*/
 			if (strtoupper($usuEncontrado->perso_estado)=="ACTIVO") {
-				$data = array(
-					'user_logueado' => TRUE,
-					'name_usuario' => $usuEncontrado->perso_usermail,
-					'tipo_usuario' => $usuEncontrado->perso_cedula
-				);
-				$this->session->set_userdata($data);
-				
-				redirect('/index.php/principal','refresh');
+				if (strtoupper($usuEncontrado->perso_tipo)=="USUARIO") {
+					echo '<script>alert("Lo sentimos, su usuario no esta autorizado para ingresar en la plataforma.")</script>';
+					$this->cerrarSesion();
+				}
+				else
+				{
+					$data = array(
+						'user_logueado' => TRUE,
+						'name_usuario' => $usuEncontrado->perso_usermail,
+						'tipo_usuario' => $usuEncontrado->perso_cedula
+					);
+					$this->session->set_userdata($data);
+					
+					redirect('/index.php/principal','refresh');
+				}
 			}
 			else
 			{

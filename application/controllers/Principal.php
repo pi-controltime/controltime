@@ -33,6 +33,8 @@ class Principal extends CI_Controller {
 		$dateTime=date('Y/m/d h:i:s', time());
 		$date = date('Y/m/d');
 
+		$usuario=$this->session->userdata('name_usuario');
+
 		switch ($opt) {
 			case '1':
 				$datos = array(
@@ -40,7 +42,7 @@ class Principal extends CI_Controller {
 					"contro_horaingreso"=>$dateTime,
 					"contro_horasalida"=>$dateTime,
 					"contro_fecharegistro"=>$dateTime,
-					"contro_registradopor"=>"admin",
+					"contro_registradopor"=>$usuario,
 					"perso_cedula"=>$doc
 
 				);

@@ -33,7 +33,7 @@ class Instituciones extends CI_Controller {
 	}
 	public function registrar(){
 
-		$codigo = $_POST["txt_codigo"];
+		$codigo = NULL;
 		$nombre = $_POST["txt_nombre"];
 		$telefono = $_POST["txt_tel"];
 		$jefe = $_POST["txt_jefe"];

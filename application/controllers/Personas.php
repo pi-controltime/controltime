@@ -60,7 +60,7 @@ class Personas extends CI_Controller {
 			}
 			else
 			{
-				$pass = $this->input->post('txt_pass');
+				$pass = md5($this->input->post('txt_pass'));
 
 			}
 			$inst = $this->input->post('select_institucion');
@@ -79,11 +79,11 @@ class Personas extends CI_Controller {
 				"perso_telefonofijo"=> $telfijo,
 				"perso_celular"=> $cel,
 				"perso_usermail"=> $correo,
-				"perso_contrasena"=> md5($pass),
+				"perso_contrasena"=> $pass,
 				"perso_jefe"=> $jefe,
 				"perso_modalidad"=> $modalidad,
 				"perso_estado"=> "Activo",
-				"perso_canthoras"=> $canthoras.":"."00".":"."00"."."."0000",
+				"perso_canthoras"=> $canthoras,
 				"perso_estudiosencurso"=> $carreracurso,	 
 				"perso_fecharegistro"=> $dateTime, 
 				"perso_registradopor"=> "admin",
@@ -97,5 +97,10 @@ class Personas extends CI_Controller {
 			$this->personas_model->registrarDatos($datos);
 
 		
+	}
+	public function getPersonas(){
+	 	$res = $this->personas_model->getAll();
+
+
 	}
 }
