@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$("#tarjetapass").hide();
+	$("#txt_doc").focus();
 
 
 
@@ -46,16 +47,61 @@ function validacceso(){
 	}
 }
 
+/*$("#btn_registrar").click(function(){
+  //$( "#frm_persona" ).submit(function( event ) {
+	
+	if ($("#txt_doc").val()=="") {
+		alert("Debe ingresar un numero de documento.");
+		$("#txt_doc").focus();
+		return false;
+	}
+	if($("#txt_nombres").val()=="") {
+		alert("El nombre es un campo oblicatorio para genera un certificado.");
+		$("#txt_nombres").focus();
+		return false;
+	}
+	if($("#txt_apellidos").val()=="") {
+		alert("El apellido es un campo oblicatorio para genera un certificado.");
+		$("#txt_apellidos").focus();
+		return false;
+	}
+	if($("#txt_correo").val()=="") {
+		alert("El correo es obligatorio ya que se enviara el certificado a este.");
+		$("#txt_correo").focus();
+		return false;
+	}
 
-  $( "#frm_persona" ).submit(function( event ) {
-	console.log($("#frm_persona").serialize());
-	$.ajax({
+	if ($("#select_institucion").val()==null) {
+		
+		alert("Debe seleccionar una institucion.");
+		$("#select_institucion").focus();
+		return false;
+	}
+	if ($("#select_eps").val()==null) {
+		alert("Debe seleccionar una EPS.");
+		$("#select_eps").focus();
+		return false;
+	}
+	if($("#select_subarea").val()==null){
+
+		alert("Debe seleccionar una Sub area.");
+		$("#select_subarea").focus();
+		return false;
+	}
+		$.ajax({
 		url:$("#frm_persona").attr("action"),
 		type:$("#frm_persona").attr("method"),
 		data:$("#frm_persona").serialize(),
 		success:function(respuesta){
-			alert(respuesta);
-		}
-	})
+			$("msg").html(respuesta);
+		},
+		error: function() 
+        {
+            alert("Invalide!");
+        }
+	})	
+	
 
-  });
+	
+
+  });*/

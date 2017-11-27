@@ -20,6 +20,9 @@ class Login extends CI_Controller {
 		if ($this->session->userdata('user_logueado')) {
 					redirect('/index.php/principal','refresh');
 		}
+		else{
+			$this->cerrarSesion();
+		}
 	}
 
 	public function validar(){

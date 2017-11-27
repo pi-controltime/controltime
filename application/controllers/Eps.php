@@ -12,17 +12,23 @@ class Eps extends CI_Controller
 
 	public function index()
 	{
+		if ($this->session->userdata('user_logueado')) {
 				
-		$resulteps= $this->Eps_model->getEps();
-		$dato = array(
-			"title_page"=>"Eps | controltime"
-		);
+			$resulteps= $this->Eps_model->getEps();
+			$dato = array(
+				"title_page"=>"Eps | controltime"
+			);
 
-		$resultadoseps= array ('todaseps' => $resulteps );
-		/*la visualizacion del encabezado de la pantalla*/
-		$this->load->view('templates/header_principal', $dato);
-		/*la visualizacion de la siguiente pantalla,, se agrega la creacion de la visualizacion de l base de datoseps x*/
-		$this->load->view('eps_view', $resultadoseps); // );
+			$resultadoseps= array ('todaseps' => $resulteps );
+			/*la visualizacion del encabezado de la pantalla*/
+			$this->load->view('templates/header_principal', $dato);
+			/*la visualizacion de la siguiente pantalla,, se agrega la creacion de la visualizacion de l base de datoseps x*/
+			$this->load->view('eps_view', $resultadoseps); // );
+		else
+		{
+			echo "<script>alert('No iniciaste sesion, no puedes ingresar a este lugar.');</script>";
+			redirect('index.php/login', 'refresh');
+		}
 		
 	}
 	/*la visualizacion y validacion del usuario y contraseña del usuario*/

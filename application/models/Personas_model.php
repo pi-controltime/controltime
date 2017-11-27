@@ -54,7 +54,20 @@ class Personas_model extends CI_Model
 
 	}
 
-	function registrar(){
+	function registrarDatos($datos){
+		$this->db->insert('personas',$datos);
+		echo "<script>alert('Persona registrada con exito.');</script>";
+		redirect('index.php/personas','refresh');
+		/*$insert = $this->db->insert('personas',$datos);
+
+
+		if ($insert) {
+			return true;
+		}
+		else
+		{
+			return false;
+		}*/
 
 	}
 

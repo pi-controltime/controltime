@@ -101,7 +101,7 @@
           </span>
           <hr>
   	      <a class="mdl-navigation__link" href="<?php echo base_url();?>index.php/Certlistos">Horas acumuladas</a>
-  	      <a class="mdl-navigation__link" href="">Gastos ahorrados</a>
+  	      <!--<a class="mdl-navigation__link" href="">Gastos ahorrados</a>-->
 
   	    </nav>
   	  </div>

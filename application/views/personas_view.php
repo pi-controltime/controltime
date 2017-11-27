@@ -4,7 +4,7 @@
 
 <div class="mdl-grid">  
   <div class="mdl-tabs__panel is-active mdl-cell--8-col mdl-cell--6-col-tablet " id="datospersonales">
-  	
+  	<div id="msg"></div>
 <!-- ****************TARJETA DATOS PERSONALES****************-->
   	<div class="demo-card-square mdl-card mdl-shadow--2dp max-width-persona">
   	  <div class="mdl-card__title mdl-card--expand mdl-card--border titlered">
@@ -58,14 +58,14 @@
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="number" id="txt_correo" name="txt_correo">
-                <label class="mdl-textfield__label" for="txt_correo">Cantidad horas voluntariado</label>
+                <input class="mdl-textfield__input" type="number" id="txt_canthoras" name="txt_canthoras">
+                <label class="mdl-textfield__label" for="txt_canthoras">Cantidad horas voluntariado</label>
             </div>
           </div>
           <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="txt_correo" name="txt_correo">
-                <label class="mdl-textfield__label" for="txt_correo">Carrera en curso</label>
+                <input class="mdl-textfield__input" type="text" id="txt_carreracurso" name="txt_carreracurso">
+                <label class="mdl-textfield__label" for="txt_carreracurso">Carrera en curso</label>
             </div>
           </div>
           <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
@@ -163,8 +163,8 @@
 
           <div class="mdl-card__supporting-text">
               <label class="">Asocie una institución a la que pertenece la persona *</label>
-              <select class="form-control" id="select_institucion" name="select_institucion">
-                <option disabled selected value="0">Seleccione una institucion</option>
+              <select class="form-control" id="select_institucion" name="select_institucion" >
+                <option disabled selected >Seleccione una institucion</option>
                 <?php foreach ($insti->result() as $insrow ) { ?>
                   <option value="<?php echo $insrow->insti_codigo ?>"><?php echo $insrow->insti_nombreinstitucion ?></option>
                <?php } ?>
@@ -186,7 +186,7 @@
           <div class="mdl-card__supporting-text">
 
               <label class="">Asocie una EPS para la persona *</label>
-              <select class="form-control" id="select_eps" name="select_eps">
+              <select class="form-control" id="select_eps" name="select_eps" >
                 <option disabled selected value="0">Seleccione una eps </option>
                 <?php foreach ($eps->result() as $epsrow ) { ?>
                 
@@ -230,6 +230,7 @@
 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ba-btnpersona" id="btn_registrar" name="btn_registrar">
   Registrar una nueva persona
 </button>
+<!--<input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored ba-btnpersona" id="btn_registrar" value="Registrar una nueva persona">-->
   
 </form>
 

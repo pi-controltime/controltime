@@ -11,16 +11,23 @@ class Instituciones extends CI_Controller {
 	}
 	public function index()
 	{
-		$dato['title_page'] = "Instituciones | ControlTime"; 
+		if ($this->session->userdata('user_logueado')) {
+			$dato['title_page'] = "Instituciones | ControlTime"; 
 
-		$all = $this->instituciones_model->getAll();
+			$all = $this->instituciones_model->getAll();
 
-		$data = array(
-			'resInst'=>$all
-		);
+			$data = array(
+				'resInst'=>$all
+			);
 
-		$this->load->view('templates/header_principal', $dato);
-		$this->load->view('instituciones_view',$data);
+			$this->load->view('templates/header_principal', $dato);
+			$this->load->view('instituciones_view',$data);
+		}
+		else
+		{
+			echo "<script>alert('No iniciaste sesion, no puedes ingresar a este lugar.');</script>";
+			redirect('index.php/login', 'refresh');
+		}
 
 
 	}

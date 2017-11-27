@@ -11,16 +11,23 @@ class Certlistos extends CI_Controller {
 	}
 	public function index()
 	{
-		$dato['title_page'] = "Listos Certificar | ControlTime";
+		if ($this->session->userdata('user_logueado')) {
+			$dato['title_page'] = "Listos Certificar | ControlTime";
 
-		$all = $this->certlistos_model->getData();
+			$all = $this->certlistos_model->getData();
 
-		$datos = array(
-			"restabla"=>$all
-		);
+			$datos = array(
+				"restabla"=>$all
+			);
 
-		$this->load->view('templates/header_principal', $dato);
-		$this->load->view('certlistos_view',$datos);
-		$this->load->view('templates/footer_principal');
+			$this->load->view('templates/header_principal', $dato);
+			$this->load->view('certlistos_view',$datos);
+			$this->load->view('templates/footer_principal');
+		}
+		else
+		{
+			echo "<script>alert('No iniciaste sesion, no puedes ingresar a este lugar.');</script>";
+			redirect('index.php/login', 'refresh');
+		}
 	}
 }

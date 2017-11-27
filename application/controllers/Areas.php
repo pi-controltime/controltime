@@ -10,20 +10,26 @@ class Areas extends CI_Controller {
 
 	public function index()
 	{
-		
-		// creare un array data y ese mismo array es el que trae la informacion de la base de datos
-		$data = array('areas' => $this->Areas_model->getAreas());
-		
-		$resultareas= $this ->Areas_model-> getAreas();
-		$dato = array(
-			"title_page"=>"Areas | controltime"
-		);
+		if ($this->session->userdata('user_logueado')) {
+			// creare un array data y ese mismo array es el que trae la informacion de la base de datos
+			$data = array('areas' => $this->Areas_model->getAreas());
+			
+			$resultareas= $this ->Areas_model-> getAreas();
+			$dato = array(
+				"title_page"=>"Areas | controltime"
+			);
 
-		$resultadosareas= array ('todasareas' => $resultareas );
-		/*la visualizacion del encabezado de la pantalla*/
-		$this->load->view('templates/header_principal', $dato);
-		/*la visualizacion de la siguiente pantalla,, se agrega la creacion de la visualizacion de l base de datoseps x*/
-		$this->load->view('areas_view', $resultadosareas); // );
+			$resultadosareas= array ('todasareas' => $resultareas );
+			/*la visualizacion del encabezado de la pantalla*/
+			$this->load->view('templates/header_principal', $dato);
+			/*la visualizacion de la siguiente pantalla,, se agrega la creacion de la visualizacion de l base de datoseps x*/
+			$this->load->view('areas_view', $resultadosareas); // );
+		}
+		else
+		{
+			echo "<script>alert('No iniciaste sesion, no puedes ingresar a este lugar.');</script>";
+			redirect('index.php/login', 'refresh');
+		}
 		
 	}
 	/*la visualizacion y validacion del usuario y contraseña del usuario*/
