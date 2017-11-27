@@ -55,25 +55,60 @@
   	  			</div>
   	  		</div>
   	  	</div>
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="number" id="txt_correo" name="txt_correo">
+                <label class="mdl-textfield__label" for="txt_correo">Cantidad horas voluntariado</label>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="txt_correo" name="txt_correo">
+                <label class="mdl-textfield__label" for="txt_correo">Carrera en curso</label>
+            </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="email" id="txt_correo" name="txt_correo">
+                <label class="mdl-textfield__label" for="txt_correo">Correo electronico *</label>
+            </div>
+          </div>
+
+        </div>
+
   	  	<div class="mdl-grid">
-  	  		<div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
-  	  			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  	  			    <input class="mdl-textfield__input" type="email" id="txt_correo" name="txt_correo">
-  	  			    <label class="mdl-textfield__label" for="txt_correo">Correo electronico *</label>
-  	  			</div>
-  	  		</div>
 
           <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
             <p>¿ Esta persona tiene acceso al sistema ?</p>
-          </div> 
-          <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
             <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switchpass" id="chkpass">
               <input type="checkbox" id="switchpass" class="mdl-switch__input" onclick="validacceso();">
               <span class="mdl-switch__label"></span>
             </label>
+          </div> 
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+            <label>Tipo de usuario</label>
+            <select class="form-control" id="select_tipusu" name="select_tipusu">
+              <option value="Usuario">Usuario</option>
+              <option value="Colaborador">Colaborador</option>
+              <option value="Jefe">Jefe</option>
+            </select>
+
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
+            <label class="">Jefe inmediato</label>
+              <select class="form-control" id="select_jefe" name="select_jefe">
+                <option disabled selected value="NULL">Seleccione un jefe inmediato</option>
+                <?php foreach ($jefe->result() as $jeferow ) { ?>
+                  <option value="<?php echo $jeferow->perso_cedula ?>"><?php echo $jeferow->perso_nombres." ".$jeferow->perso_apellidos?></option>
+               <?php } ?>
+                
+              </select>
           </div>
 
   	  	</div>
+
+        
 	  	    
   	  </div>
   	  

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-11-2017 a las 02:32:24
+-- Tiempo de generación: 27-11-2017 a las 05:43:20
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -253,12 +253,20 @@ INSERT INTO `aud_subareas` (`suba_codigo`, `suba_nombre`, `suba_fecharegistro`, 
 --
 
 CREATE TABLE `controlhoras` (
+  `contro_fecha` date NOT NULL,
   `contro_horaingreso` datetime NOT NULL,
   `contro_horasalida` datetime NOT NULL,
   `contro_fecharegistro` datetime NOT NULL,
   `contro_registradopor` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `perso_cedula` int(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `controlhoras`
+--
+
+INSERT INTO `controlhoras` (`contro_fecha`, `contro_horaingreso`, `contro_horasalida`, `contro_fecharegistro`, `contro_registradopor`, `perso_cedula`) VALUES
+('2017-11-26', '2017-11-26 11:16:07', '2017-11-26 11:30:17', '2017-11-26 11:16:07', 'admin', 12345);
 
 -- --------------------------------------------------------
 
@@ -708,7 +716,7 @@ ALTER TABLE `areas`
 -- Indices de la tabla `controlhoras`
 --
 ALTER TABLE `controlhoras`
-  ADD PRIMARY KEY (`contro_horaingreso`,`contro_horasalida`,`perso_cedula`),
+  ADD PRIMARY KEY (`contro_fecha`,`perso_cedula`) USING BTREE,
   ADD KEY `controlhoras_personas_fk` (`perso_cedula`);
 
 --

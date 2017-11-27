@@ -17,11 +17,13 @@ class Personas extends CI_Controller {
 		$ins=$this->personas_model->getInstitu();
 		$eps=$this->personas_model->getEPS();
 		$sar=$this->personas_model->getSarea();
+		$jefe=$this->personas_model->getJefe();
 
 		$datosList = array(
 			"insti"=>$ins,
 			"eps"=>$eps,
-			"sarea"=>$sar
+			"sarea"=>$sar,
+			"jefe"=>$jefe
 		);
 
 		$this->load->view('templates/header_principal', $dato);

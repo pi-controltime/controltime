@@ -37,6 +37,22 @@ class Personas_model extends CI_Model
 			return false;
 		}
 	}
+	function getJefe(){
+		$jefe = $this->db->query(
+			"select perso_cedula,perso_nombres,perso_apellidos 
+				from personas 
+			where perso_tipo='Administrador' 
+			group by perso_cedula");
+		
+		if ($jefe->num_rows()>0) {
+			return $jefe;
+		}
+		else
+		{
+			return false;
+		}
+
+	}
 
 	function registrar(){
 
