@@ -31,7 +31,7 @@
 										<tr>
 											<td> <?php echo $subareas->suba_codigo ; ?> </td>
 											<td> <?php echo $subareas->suba_nombre ; ?> </td>
-											<td> <?php echo $subareas->area_codigo ; ?></td>
+											<td> <?php echo $subareas->area_nombre ; ?></td>
 
 											<td hidden><?php $rutaeliminar=base_url()."index.php/subareas/eliminar/".$subareas->suba_codigo ?></td>
 
@@ -87,11 +87,14 @@
 
 						  	<div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-								<label for="area_nombre">NOMBRE DEL AREA </label>
+								<label for="area_nombre">¿ A que area pertenece ? *</label>
 									<div>
 
 										<select class="form-control" id="select_areas" name="select_areas">
                 						<option disabled selected value="0">Seleccione una area</option>
+                						<?php foreach ($todasareas->result() as $rowareas): ?>
+                							<option value="<?php echo $rowareas->area_codigo ?>"><?php echo $rowareas->area_nombre ?></option>
+                						<?php endforeach ?>
                 						</select>					  		
 
 									</div>

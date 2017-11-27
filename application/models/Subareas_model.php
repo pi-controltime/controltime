@@ -8,7 +8,11 @@ class Subareas_model extends CI_Model {
 	}
 
 	function getSubareas(){
-		$resultados = $this->db->get('subareas');
+		$resultados = $this->db->query(
+			'Select sa.suba_codigo,sa.suba_nombre,a.area_nombre 
+			from subareas sa, areas a 
+			where sa.area_codigo = a.area_codigo
+			group by sa.suba_codigo');
 		if ($resultados -> num_rows() > 0) {
 		return $resultados;
 		}
@@ -17,6 +21,16 @@ class Subareas_model extends CI_Model {
 			return false;
 		}
 		
+	}
+	function getAreas(){
+		$resultarea = $this->db->get('areas');
+		if ($resultarea -> num_rows() > 0) {
+		return $resultarea;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 
