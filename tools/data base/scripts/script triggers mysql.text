@@ -1,0 +1,422 @@
+-- TRIGGERS TABLA AREAS
+-- INSERT
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_INSERT_AREAS 
+AFTER INSERT ON areas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_areas( 
+	area_codigo, 
+	area_nombre, 
+	area_fecharegistro, 
+	area_registradopor,
+	tregistro_areas ) 
+VALUES( 
+	NEW.area_codigo, 
+	NEW.area_nombre, 
+	NEW.area_fecharegistro, 
+	NEW.area_registradopor, 
+	"I"); 
+END;
+
+-- UPDATE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_UPDATE_AREAS 
+AFTER UPDATE ON areas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_areas( 
+	area_codigo, 
+	area_nombre, 
+	area_fecharegistro, 
+	area_registradopor,
+	tregistro_areas ) 
+VALUES( 
+	OLD.area_codigo, 
+	OLD.area_nombre, 
+	OLD.area_fecharegistro, 
+	OLD.area_registradopor, 
+	"U"); 
+END;
+
+-- DELETE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_DELETE_AREAS 
+AFTER DELETE ON areas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_areas( 
+	area_codigo, 
+	area_nombre, 
+	area_fecharegistro, 
+	area_registradopor,
+	tregistro_areas ) 
+VALUES( 
+	OLD.area_codigo, 
+	OLD.area_nombre, 
+	OLD.area_fecharegistro, 
+	OLD.area_registradopor, 
+	"D"); 
+END;
+
+-- **************************************************************
+-- TRIGGERS TABLA EPS
+-- INSERT
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_INSERT_EPS 
+AFTER INSERT ON eps 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_eps( 
+	eps_codigo, 
+	eps_nombre, 
+	eps_fecharegistro, 
+	eps_registradopor ) 
+VALUES( 
+	NEW.eps_codigo, 
+	NEW.eps_nombre, 
+	NEW.eps_fecharegistro, 
+	NEW.eps_registradopor, 
+	"I"); 
+END;
+
+-- UPDATE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_UPDATE_EPS 
+AFTER UPDATE ON eps 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_eps( 
+	eps_codigo, 
+	eps_nombre, 
+	eps_fecharegistro, 
+	eps_registradopor,
+	tregistro_eps ) 
+VALUES( 
+	OLD.eps_codigo, 
+	OLD.eps_nombre, 
+	OLD.eps_fecharegistro, 
+	OLD.eps_registradopor, 
+	"U"); 
+END;
+
+-- DELETE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_DELETE_EPS 
+AFTER DELETE ON eps 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_eps( 
+	eps_codigo, 
+	eps_nombre, 
+	eps_fecharegistro, 
+	eps_registradopor,
+	tregistro_eps ) 
+VALUES( 
+	OLD.eps_codigo, 
+	OLD.eps_nombre, 
+	OLD.eps_fecharegistro, 
+	OLD.eps_registradopor, 
+	"D"); 
+END;
+
+-- **************************************************************
+-- TRIGGERS TABLA INSTITUCIONES
+-- INSERT
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_INSERT_INSTITUCIONES 
+AFTER INSERT ON instituciones 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_instituciones( 
+	insti_codigo, 
+	insti_nombreinstitucion, 
+	insti_jefevoluntariado,
+	insti_telefono,
+	insti_celular,
+	insti_correoelectronico,
+	insti_fecharegistro, 
+	insti_registradopor,
+	tregistro_instituciones ) 
+VALUES( 
+	NEW.insti_codigo, 
+	NEW.insti_nombreinstitucion,
+	NEW.insti_jefevoluntariado,
+	NEW.insti_telefono,
+	NEW.insti_celular,
+	NEW.insti_correoelectronico,
+	NEW.insti_fecharegistro, 
+	NEW.insti_registradopor, 
+	"I"); 
+END;
+
+-- UPDATE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_UPDATE_INSTITUCIONES 
+AFTER UPDATE ON instituciones 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_instituciones( 
+	insti_codigo, 
+	insti_nombreinstitucion, 
+	insti_jefevoluntariado,
+	insti_telefono,
+	insti_celular,
+	insti_correoelectronico,
+	insti_fecharegistro, 
+	insti_registradopor,
+	tregistro_instituciones ) 
+VALUES( 
+	OLD.insti_codigo, 
+	OLD.insti_nombreinstitucion, 
+	OLD.insti_jefevoluntariado,
+	OLD.insti_telefono,
+	OLD.insti_celular,
+	OLD.insti_correoelectronico,
+	OLD.insti_fecharegistro, 
+	OLD.insti_registradopor, 
+	"U"); 
+END;
+
+-- DELETE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_DELETE_INSTITUCIONES 
+AFTER DELETE ON instituciones 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_instituciones( 
+	insti_codigo, 
+	insti_nombreinstitucion, 
+	insti_jefevoluntariado,
+	insti_telefono,
+	insti_celular,
+	insti_correoelectronico,
+	insti_fecharegistro, 
+	insti_registradopor,
+	tregistro_instituciones ) 
+VALUES( 
+	OLD.insti_codigo, 
+	OLD.insti_nombreinstitucion, 
+	OLD.insti_jefevoluntariado,
+	OLD.insti_telefono,
+	OLD.insti_celular,
+	OLD.insti_correoelectronico,
+	OLD.insti_fecharegistro, 
+	OLD.insti_registradopor, 
+	"D"); 
+END;
+
+-- **************************************************************
+-- TRIGGERS TABLA SUBAREAS
+-- INSERT
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_INSERT_SUBAREAS
+AFTER INSERT ON subareas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_subareas( 
+	suba_codigo, 
+	suba_nombre, 
+	suba_fecharegistro, 
+	suba_registradopor,
+	area_codigo,
+	tregistro_subareas ) 
+VALUES( 
+	NEW.suba_codigo, 
+	NEW.suba_nombre,
+	NEW.suba_fecharegistro, 
+	NEW.suba_registradopor, 
+	NEW.area_codigo,
+	"I"); 
+END;
+
+-- UPDATE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_UPDATE_SUBAREAS 
+AFTER UPDATE ON subareas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_subareas( 
+	suba_codigo, 
+	suba_nombre,
+	suba_fecharegistro, 
+	suba_registradopor,
+	area_codigo,
+	tregistro_subareas ) 
+VALUES( 
+	OLD.suba_codigo, 
+	OLD.suba_nombre, 
+	OLD.suba_fecharegistro, 
+	OLD.suba_registradopor, 
+	OLD.area_codigo,
+	"U"); 
+END;
+
+-- DELETE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_DELETE_SUBAREAS 
+AFTER DELETE ON subareas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_subareas( 
+	suba_codigo, 
+	suba_nombre, 
+	suba_fecharegistro, 
+	suba_registradopor,
+	area_codigo,
+	tregistro_subareas ) 
+VALUES( 
+	OLD.suba_codigo, 
+	OLD.suba_nombre, 
+	OLD.suba_fecharegistro, 
+	OLD.suba_registradopor, 
+	OLD.area_codigo,
+	"D"); 
+END;
+
+
+-- **************************************************************
+-- TRIGGERS TABLA PERSONAS
+-- INSERT
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_INSERT_PERSONAS
+AFTER INSERT ON personas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_personas( 
+	perso_cedula, 
+	perso_tipo,
+	perso_nombres,
+	perso_apellidos,
+	perso_telefonofijo,
+	perso_celular,
+	perso_usermail,
+	perso_contrasena,
+	perso_jefe,
+	perso_modalidad,
+	perso_estado,
+	perso_canthoras,
+	perso_estudiosencurso,	 
+	perso_fecharegistro, 
+	perso_registradopor,
+	eps_codigo,
+	insti_codigo,
+	suba_codigo
+	tregistro_personas ) 
+VALUES(
+	NEW.perso_cedula, 
+	NEW.perso_tipo,
+	NEW.perso_nombres,
+	NEW.perso_apellidos,
+	NEW.perso_telefonofijo,
+	NEW.perso_celular,
+	NEW.perso_usermail,
+	NEW.perso_contrasena,
+	NEW.perso_jefe,
+	NEW.perso_modalidad,
+	NEW.perso_estado,
+	NEW.perso_canthoras,
+	NEW.perso_estudiosencurso,	 
+	NEW.perso_fecharegistro, 
+	NEW.perso_registradopor,
+	NEW.eps_codigo,
+	NEW.insti_codigo,
+	NEW.suba_codigo,
+	"I"); 
+END;
+
+-- UPDATE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_UPDATE_PERSONAS 
+AFTER UPDATE ON personas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_personas( 
+	perso_cedula, 
+	perso_tipo,
+	perso_nombres,
+	perso_apellidos,
+	perso_telefonofijo,
+	perso_celular,
+	perso_usermail,
+	perso_contrasena,
+	perso_jefe,
+	perso_modalidad,
+	perso_estado,
+	perso_canthoras,
+	perso_estudiosencurso,	 
+	perso_fecharegistro, 
+	perso_registradopor,
+	eps_codigo,
+	insti_codigo,
+	suba_codigo
+	tregistro_personas )  
+VALUES( 
+	OLD.perso_cedula, 
+	OLD.perso_tipo,
+	OLD.perso_nombres,
+	OLD.perso_apellidos,
+	OLD.perso_telefonofijo,
+	OLD.perso_celular,
+	OLD.perso_usermail,
+	OLD.perso_contrasena,
+	OLD.perso_jefe,
+	OLD.perso_modalidad,
+	OLD.perso_estado,
+	OLD.perso_canthoras,
+	OLD.perso_estudiosencurso,	 
+	OLD.perso_fecharegistro, 
+	OLD.perso_registradopor,
+	OLD.eps_codigo,
+	OLD.insti_codigo,
+	OLD.suba_codigo,
+	"U"); 
+END;
+
+-- DELETE
+
+DELIMITER \\
+CREATE OR REPLACE TRIGGER TR_DELETE_PERSONAS 
+AFTER DELETE ON personas 
+FOR EACH ROW BEGIN 
+INSERT INTO aud_personas( 
+	perso_cedula, 
+	perso_tipo,
+	perso_nombres,
+	perso_apellidos,
+	perso_telefonofijo,
+	perso_celular,
+	perso_usermail,
+	perso_contrasena,
+	perso_jefe,
+	perso_modalidad,
+	perso_estado,
+	perso_canthoras,
+	perso_estudiosencurso,	 
+	perso_fecharegistro, 
+	perso_registradopor,
+	eps_codigo,
+	insti_codigo,
+	suba_codigo
+	tregistro_personas )  
+VALUES( 
+	OLD.perso_cedula, 
+	OLD.perso_tipo,
+	OLD.perso_nombres,
+	OLD.perso_apellidos,
+	OLD.perso_telefonofijo,
+	OLD.perso_celular,
+	OLD.perso_usermail,
+	OLD.perso_contrasena,
+	OLD.perso_jefe,
+	OLD.perso_modalidad,
+	OLD.perso_estado,
+	OLD.perso_canthoras,
+	OLD.perso_estudiosencurso,	 
+	OLD.perso_fecharegistro, 
+	OLD.perso_registradopor,
+	OLD.eps_codigo,
+	OLD.insti_codigo,
+	OLD.suba_codigo,
+	"D"); 
+END;
