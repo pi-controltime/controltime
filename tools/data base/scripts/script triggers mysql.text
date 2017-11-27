@@ -71,7 +71,8 @@ INSERT INTO aud_eps(
 	eps_codigo, 
 	eps_nombre, 
 	eps_fecharegistro, 
-	eps_registradopor ) 
+	eps_registradopor,
+	tregistro_eps ) 
 VALUES( 
 	NEW.eps_codigo, 
 	NEW.eps_nombre, 
@@ -219,14 +220,12 @@ INSERT INTO aud_subareas(
 	suba_nombre, 
 	suba_fecharegistro, 
 	suba_registradopor,
-	area_codigo,
 	tregistro_subareas ) 
 VALUES( 
 	NEW.suba_codigo, 
 	NEW.suba_nombre,
 	NEW.suba_fecharegistro, 
 	NEW.suba_registradopor, 
-	NEW.area_codigo,
 	"I"); 
 END;
 
@@ -241,14 +240,12 @@ INSERT INTO aud_subareas(
 	suba_nombre,
 	suba_fecharegistro, 
 	suba_registradopor,
-	area_codigo,
 	tregistro_subareas ) 
 VALUES( 
 	OLD.suba_codigo, 
 	OLD.suba_nombre, 
 	OLD.suba_fecharegistro, 
 	OLD.suba_registradopor, 
-	OLD.area_codigo,
 	"U"); 
 END;
 
@@ -263,14 +260,12 @@ INSERT INTO aud_subareas(
 	suba_nombre, 
 	suba_fecharegistro, 
 	suba_registradopor,
-	area_codigo,
 	tregistro_subareas ) 
 VALUES( 
 	OLD.suba_codigo, 
 	OLD.suba_nombre, 
 	OLD.suba_fecharegistro, 
 	OLD.suba_registradopor, 
-	OLD.area_codigo,
 	"D"); 
 END;
 
@@ -301,7 +296,7 @@ INSERT INTO aud_personas(
 	perso_registradopor,
 	eps_codigo,
 	insti_codigo,
-	suba_codigo
+	suba_codigo,
 	tregistro_personas ) 
 VALUES(
 	NEW.perso_cedula, 
@@ -349,7 +344,7 @@ INSERT INTO aud_personas(
 	perso_registradopor,
 	eps_codigo,
 	insti_codigo,
-	suba_codigo
+	suba_codigo,
 	tregistro_personas )  
 VALUES( 
 	OLD.perso_cedula, 
@@ -397,7 +392,7 @@ INSERT INTO aud_personas(
 	perso_registradopor,
 	eps_codigo,
 	insti_codigo,
-	suba_codigo
+	suba_codigo,
 	tregistro_personas )  
 VALUES( 
 	OLD.perso_cedula, 
