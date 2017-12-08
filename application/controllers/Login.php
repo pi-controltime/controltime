@@ -25,15 +25,18 @@ class Login extends CI_Controller {
 
 	public function validar(){
 		$usuario = $_POST['usuario'];
-		$pass = $_POST['password'];
+		$pass = md5($_POST['password']);
+
 
 		$usuEncontrado= $this->login_model->login($usuario,$pass);
 
 		if ($usuEncontrado) {
 			/*strtoupper = CONVIERTE TODO EL TEXTO A MAYUSCULAS*/
+
 			if (strtoupper($usuEncontrado->perso_estado)=="ACTIVO") {
 				if (strtoupper($usuEncontrado->perso_tipo)=="USUARIO") {
 					echo '<script>alert("Lo sentimos, su usuario no esta autorizado para ingresar en la plataforma.")</script>';
+					
 					$this->cerrarSesion();
 				}
 				else
@@ -41,7 +44,7 @@ class Login extends CI_Controller {
 					$data = array(
 						'user_logueado' => TRUE,
 						'name_usuario' => $usuEncontrado->perso_usermail,
-						'tipo_usuario' => $usuEncontrado->perso_cedula
+						'tipo_usuario' => $usuEncontrado->perso_tipo
 					);
 					$this->session->set_userdata($data);
 					
@@ -53,6 +56,8 @@ class Login extends CI_Controller {
 
 				echo '<script>alert("Lo sentimos, el usuario ya no se encuentra activo en nuestro sistema. Para mas información comuniquese con el administrador.")</script>';
 				$this->cerrarSesion();
+				
+
 			}
 
 		}
@@ -60,6 +65,7 @@ class Login extends CI_Controller {
 		{
 			echo '<script>alert("El usuario no se encuntra registrado o no tiene permiso para acceder. Por favor cominiquese con el administrador.")</script>';
 			redirect('/index.php/inicio','refresh');
+			
 		}
 
 

@@ -15,9 +15,10 @@
 		    </div>
 
 		  </div>-->
+		 
 		<div class="mdl-card__supporting-text">
 			<div class="tablacertificados">
-
+				<!--<form method="GET" action="<?php //echo base_url(); ?>index.php/certlistos/tratar">-->
 				<table class="table table-bordered table-striped table-responsive-lg display" id="tbl_reg">
 				  <thead>
 				    <tr>
@@ -28,6 +29,7 @@
 				      <th>Hasta</th>
 				      <th>Horas Acumuladas</th>
 				      <th>Horas a realizar</th>
+				      <th>Estado del certificado</th>
 				      <th>Acciones</th>
 				    </tr>
 				  </thead>
@@ -42,20 +44,47 @@
 				      <td><?php echo $rowdata->Hasta;?></td>
 				      <td><?php echo $rowdata->HorasAcumuladas;?></td>
 				      <td><?php echo $rowdata->perso_canthoras;?></td>
+				      <td><?php //echo $rowdata->estcertificado_persona;?>
+				      		<?php if ($rowdata->estcertificado_persona == "No certificado"): ?>
+				      			<span class="badge badge-danger">
+				      				No certificado
+				      				
+				      			</span>
+				      		<?php endif ?>
+				      		<?php if ($rowdata->estcertificado_persona == "Pendiente"): ?>
+				      			<span class="badge badge-warning">
+				      				Pendiente
+				      				
+				      			</span>
+				      		<?php endif ?>
+				      		<?php if ($rowdata->estcertificado_persona == "Certificado"): ?>
+				      			<span class="badge badge-success">
+				      				Certificado
+				      				
+				      			</span>
+				      		<?php endif ?>
+				      </td>
 				      <td>
-				      	<button class="btn btn-sm btn-warning" name="btn_solcertificado" title="Solicitar certificado">
+				      	
+				      	<a href="<?php echo base_url('index.php/certlistos/solCertificado/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-warning" name="btn_solcertificado" id="btn_solcertificado" title="Solicitar certificado">
 				      		<i class="material-icons">check</i>
-				      	</button>
-				      	<button class="btn btn-sm btn-success" name="btn_certificar" title="Certificar">
+				      	</a>
+				      	<?php $tipoUsus = $this->session->userdata('tipo_usuario'); 
+				      	if ($tipoUsus=="Jefe" or $tipoUsus =="Administrador") { ?>
+				      	<a href="<?php echo base_url('index.php/certlistos/certificar/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-success" name="btn_certificar" id="btn_certificar" title="Certificar">
 				      		<i class="material-icons">done_all</i>
-				      	</button>
-				      	<button class="btn btn-sm btn-danger" name="btn_pdf" title="Generar PDF">
+				      	</a>
+				      	<a href="<?php echo base_url('index.php/certlistos/cancelCertificado/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_cancelcertificado" id="btn_cancelcertificado" title="Cancelar certificado">
+				      		<i class="material-icons"><i class="material-icons">cancel</i></i>
+				      	</a>
+				      	<?php } ?>
+				      	<a href="<?php echo base_url('index.php/certlistos/repPdf/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_pdf" id="btn_pdf" title="Generar PDF">
 				      		<i class="material-icons">picture_as_pdf</i>
-				      	</button>
-				      	<button class="btn btn-sm btn-dark" name="btn_enviar" title="Enviar por correo">
+				      	</a>
+				      	<a href="<?php echo base_url('index.php/certlistos/sendMail/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-dark" name="btn_enviar" id="btn_enviar" title="Enviar por correo">
 				      		<i class="material-icons">send</i>
-				      	</button>
-
+				      	</a>
+				      	
 				      </td>
 				    </tr>	
 				  	<?php endforeach ?>
@@ -63,6 +92,7 @@
 				    
 					  </tbody>
 					</table>
+					<!--</form>-->
 				</div>
 			</div>
 			<!--<div class="mdl-card__actions mdl-card--border">
