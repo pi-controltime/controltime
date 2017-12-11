@@ -19,10 +19,26 @@ class Certlistos extends CI_Controller {
 	public function index()
 	{
 		if ($this->session->userdata('user_logueado')) {
-			$dato['title_page'] = "Listos Certificar | ControlTime";
+			
 
 			$all = $this->certlistos_model->getData();
+			
+			/*foreach ($all->result() as $r) {
 
+				if ($r->HorasAcumuladas = $r->perso_canthoras) {
+					
+					$usuCompletados = array(						
+						"nombres"=>$r->perso_nombres,
+						"apellidos"=>$r->perso_apellidos
+					);
+				}
+			}*/
+			$dato['title_page'] = "Listos Certificar | ControlTime";
+			/*$dato = array(
+				"title_page"=>"Listos Certificar | ControlTime",
+				"usu_listos"=>$usuCompletados
+
+			);*/
 			$datos = array(
 				"restabla"=>$all
 			);

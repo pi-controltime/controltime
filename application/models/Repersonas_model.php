@@ -23,6 +23,17 @@ class Repersonas_model extends CI_Model {
 			return false;
 		}
 	}
+	function obtener($id){
+		$this->db->where("perso_cedula",$id);
+		$datos = $this->db->get("personas");
+		if ($datos) {
+			return $datos->result();
+		}
+		else
+		{
+			return false;
+		}
+	}
 	function elimina($id){
 		try {
 			$this->db->where('perso_cedula',$id);
