@@ -39,9 +39,9 @@ class Personas_model extends CI_Model
 	}
 	function getJefe(){
 		$jefe = $this->db->query(
-			"select perso_cedula,perso_nombres,perso_apellidos 
+			"select perso_cedula,perso_nombres,perso_apellidos, perso_tipo
 				from personas 
-			where perso_tipo='Administrador' 
+			where perso_tipo='Jefe' 
 			group by perso_cedula");
 		
 		if ($jefe->num_rows()>0) {

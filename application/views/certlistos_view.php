@@ -78,12 +78,16 @@
 				      		<i class="material-icons"><i class="material-icons">cancel</i></i>
 				      	</a>
 				      	<?php } ?>
-				      	<a href="<?php echo base_url('index.php/certlistos/repPdf/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_pdf" id="btn_pdf" title="Generar PDF">
-				      		<i class="material-icons">picture_as_pdf</i>
-				      	</a>
-				      	<a href="<?php echo base_url('index.php/certlistos/sendMail/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-dark" name="btn_enviar" id="btn_enviar" title="Enviar por correo">
+
+				      	<?php if ($rowdata->estcertificado_persona == "Certificado"): ?>
+				      		<a href="<?php echo base_url('index.php/certlistos/repPdf/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_pdf" id="btn_pdf" title="Generar PDF">
+				      			<i class="material-icons">picture_as_pdf</i>
+				      		</a>
+				      	<?php endif ?>
+				      	
+				      	<!--<a href="<?php echo base_url('index.php/certlistos/sendMail/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-dark" name="btn_enviar" id="btn_enviar" title="Enviar por correo">
 				      		<i class="material-icons">send</i>
-				      	</a>
+				      	</a>-->
 				      	
 				      </td>
 				    </tr>	

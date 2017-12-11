@@ -81,19 +81,40 @@
 
           <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
             <p>¿ Esta persona tiene acceso al sistema ?</p>
-            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switchpass" id="chkpass">
-              <input type="checkbox" id="switchpass" class="mdl-switch__input" onclick="validacceso();">
-              <span class="mdl-switch__label"></span>
-            </label>
+            <?php if ($this->session->userdata('tipo_usuario') === "Colaborador"): ?>
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switchpass" id="chkpass">
+                <input disabled type="checkbox" id="switchpass" class="mdl-switch__input" onclick="validacceso();">
+                <span class="mdl-switch__label"></span>
+              </label>
+            <?php else: ?>
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switchpass" id="chkpass">
+                <input  type="checkbox" id="switchpass" class="mdl-switch__input" onclick="validacceso();">
+                <span class="mdl-switch__label"></span>
+              </label>
+            <?php endif ?>
+            
           </div> 
           <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
             <label>Tipo de usuario</label>
+            
             <select class="form-control" id="select_tipusu" name="select_tipusu">
-              <option value="Usuario">Usuario</option>
-              <option value="Colaborador">Colaborador</option>
-              <option value="Jefe">Jefe</option>
-            </select>
+            
+            <?php if ($this->session->userdata('tipo_usuario') === "Colaborador"): ?>
+              
+                <option value="Usuario">Usuario</option>
+                <option disabled  value="Colaborador">Colaborador</option>
+                <option disabled  value="Jefe">Jefe</option>
 
+            <?php else: ?>
+             
+                <option value="Usuario">Usuario</option>
+                <option value="Colaborador">Colaborador</option>
+                <option value="Jefe">Jefe</option>
+              
+    
+            <?php endif ?>
+            </select>
+            
           </div>
           <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
             <label class="">Jefe inmediato</label>
@@ -119,7 +140,7 @@
 
   	<div class="demo-card-square mdl-card mdl-shadow--2dp max-width-persona" id="tarjetapass">
   	  <div class="mdl-card__title mdl-card--expand mdl-card--border titlered">
-  	    <h2 class="mdl-card__title-text">Establesca una contraseña </h2>
+  	    <h2 class="mdl-card__title-text">Establezca una contraseña </h2>
   	  	<!--<div class="mdl-card__subtitle-text"> Diligencie esta opcion unicamente si la persona registrada va a tener acceso al sistema</div>-->
   	  </div>
 

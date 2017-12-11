@@ -31,4 +31,7 @@ class Repersonas extends CI_Controller {
 
 
 	}
+	public function eliminar($id){
+		$this->repersonas_model->elimina($id);
+	}
 }

@@ -42,12 +42,10 @@
 				      	</a>
 				      	<?php $tipoUsus = $this->session->userdata('tipo_usuario'); 
 				      	if ($tipoUsus=="Jefe" or $tipoUsus =="Administrador") { ?>
-				      	<a href="<?php echo base_url('index.php/certlistos/certificar/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-success" name="btn_certificar" id="btn_certificar" title="Certificar">
-				      		<i class="material-icons">done_all</i>
+				      	<a href="<?php echo base_url('index.php/repersonas/eliminar/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_certificar" id="btn_certificar" title="Eliminar">
+				      		<i class="material-icons">delete_forever</i>
 				      	</a>
-				      	<a href="<?php echo base_url('index.php/certlistos/cancelCertificado/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_cancelcertificado" id="btn_cancelcertificado" title="Cancelar certificado">
-				      		<i class="material-icons"><i class="material-icons">cancel</i></i>
-				      	</a>
+				      	
 				      	<?php } ?>
 				      	
 				      </td>

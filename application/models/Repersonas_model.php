@@ -23,5 +23,18 @@ class Repersonas_model extends CI_Model {
 			return false;
 		}
 	}
+	function elimina($id){
+		try {
+			$this->db->where('perso_cedula',$id);
+			$this->db->delete('personas');
+			echo "<script>alert('Persona eliminada con exito.');</script>";
+
+			redirect('index.php/instituciones', 'refresh');	
+		} catch (Exception $e) {
+			
+			var_dump($e);
+		}
+		
+	}
 
 }
