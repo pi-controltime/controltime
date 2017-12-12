@@ -29,10 +29,7 @@ class Principal extends CI_Controller {
 		
 	}
 	public function registrar(){
-		//consigo las horas acumiladas de los empleados
-		
-
-		
+		//consigo las horas acumiladas de los empleados		
 
 		$doc = $this->input->get('txt_doc');
 		$opt = $this->input->get('options');
