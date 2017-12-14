@@ -34,6 +34,7 @@ class Repersonas_model extends CI_Model {
 			return false;
 		}
 	}
+	
 	function elimina($id){
 		try {
 			$this->db->where('perso_cedula',$id);

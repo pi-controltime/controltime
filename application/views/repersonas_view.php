@@ -44,12 +44,20 @@
 				      <td><?php echo $rowdata->insti_nombreinstitucion;?></td>
 				      <td>
 				      	
-				      	<a href="<?php echo base_url('index.php/certlistos/solCertificado/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-warning" name="btn_solcertificado" id="btn_solcertificado" title="Modificar">
+				      	<a href="<?php echo base_url('index.php/certlistos/solCertificado/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-info" name="btn_solcertificado" id="btn_solcertificado" title="Certificar">
+				      		<i class="material-icons">assignment</i>
+				      	</a>
+
+
+
+				      	<a href="<?php echo base_url('index.php/repersonas/modificar/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-warning" name="btn_modificar" id="btn_modificar" title="Modificar">
 				      		<i class="material-icons">update</i>
 				      	</a>
-				      	
+
+
 				      	<?php $tipoUsus = $this->session->userdata('tipo_usuario'); 
 				      	if ($tipoUsus=="Jefe" or $tipoUsus =="Administrador") { ?>
+
 
 				      	<a href="<?php echo base_url('index.php/repersonas/eliminar/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_certificar" id="btn_certificar" title="Eliminar">
 				      		<i class="material-icons">delete_forever</i>
@@ -75,6 +83,8 @@
 		</div>
 
 	</div>
+
+
 
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 	  
