@@ -9,7 +9,7 @@ class Repersonas_model extends CI_Model {
 	}
 	function listar(){
 		$obtener = $this->db->query("
-				SELECT p.perso_cedula,p.perso_nombres,p.perso_apellidos,p.perso_telefonofijo,p.perso_celular,p.perso_usermail,p.perso_modalidad,e.eps_nombre,i.insti_nombreinstitucion
+				SELECT p.perso_cedula,p.perso_nombres,p.perso_apellidos,p.perso_telefonofijo,p.perso_celular,p.perso_usermail,p.perso_modalidad, p.perso_estado, p.perso_canthoras, p.perso_estudiosencurso, e.eps_nombre,i.insti_nombreinstitucion
 				FROM personas p, eps e, instituciones i 
 				WHERE p.eps_codigo = e.eps_codigo
 				and p.insti_codigo = i.insti_codigo

@@ -10,16 +10,20 @@
 				<table class="table table-bordered table-striped table-responsive-lg display" id="tbl_perso">
 				  <thead>
 				    <tr>
-				    	<th>Identificacion</th>
+				      
+				      <th>Identificacion</th>
 				      <th>Nombres</th>
 				      <th>Apellidos</th>
 				      <th>Telefono</th>
 				      <th>Celular</th>
 				      <th>Correo</th>
+				      <th>Modalidad</th>
+				      <th>Estado</th>
+				      <th>Cantidad Horas</th>
 				      <th>Estudios en curso</th>
 				      <th>Eps</th>
 				      <th>Institucion</th>
-				      <th>Estado</th>
+				      <th>Acciones</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -33,6 +37,9 @@
 				      <td><?php echo $rowdata->perso_celular;?></td>
 				      <td><?php echo $rowdata->perso_usermail;?></td>
 				      <td><?php echo $rowdata->perso_modalidad;?></td>
+				      <td><?php echo $rowdata->perso_estado;?></td>
+				      <td><?php echo $rowdata->perso_canthoras;?></td>
+				      <td><?php echo $rowdata->perso_estudiosencurso;?></td>
 				      <td><?php echo $rowdata->eps_nombre;?></td>
 				      <td><?php echo $rowdata->insti_nombreinstitucion;?></td>
 				      <td>
@@ -40,8 +47,10 @@
 				      	<a href="<?php echo base_url('index.php/certlistos/solCertificado/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-warning" name="btn_solcertificado" id="btn_solcertificado" title="Modificar">
 				      		<i class="material-icons">update</i>
 				      	</a>
+				      	
 				      	<?php $tipoUsus = $this->session->userdata('tipo_usuario'); 
 				      	if ($tipoUsus=="Jefe" or $tipoUsus =="Administrador") { ?>
+
 				      	<a href="<?php echo base_url('index.php/repersonas/eliminar/');?><?php echo $rowdata->perso_cedula ?>" class="btn btn-sm btn-danger" name="btn_certificar" id="btn_certificar" title="Eliminar">
 				      		<i class="material-icons">delete_forever</i>
 				      	</a>
